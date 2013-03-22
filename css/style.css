@@ -1,0 +1,64 @@
+html { overflow-y: scroll; }
+
+header {
+	background-color: #dfdfdf;
+}
+
+body {
+	background-color: white;
+
+
+}
+
+header {
+	background-color: #dfdfdf;
+}
+
+#wrap {
+	width: 960px;
+	margin: 0 auto;
+}
+
+p {
+	font-family: sans-serif;
+	font-size: 14px;
+	color: black;
+	padding: 10px;
+}
+
+div#checkout_steps {
+	padding: 0;
+	margin: 10px 0;
+	float: left;
+	width: auto;
+	height: 400px;
+	position: relative;
+}
+
+div.section {
+	max-width: 490px;
+	width:490px;
+	border: 1px solid #cccccc;
+	border-left: none;
+	margin: 0;
+	height: inherit;
+	position: absolute;
+	top: 0;
+	z-index:0;
+}
+
+div#section_1 {	border-left: 1px solid #cccccc; }
+
+div#section_1 { left: 0;}
+div#section_2 { left: 40px;}
+div#section_3 { left: 80px;}
+div#section_4 { left: 120px;}
+div#section_5 { left: 160px;}
+
+div#cart_contents {
+	float: right;
+	border: 1px solid #cccccc;
+	width: 270px;
+	height: 600px;
+	margin: 10px 0;
+}

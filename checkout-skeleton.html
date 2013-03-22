@@ -3,9 +3,147 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>CS 545 Checkout</title>
+		<link rel="stylesheet" type="text/css" href="./css/reset.css">
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+
+		<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.js"></script>
+		<script type="text/javascript" src="./js/jscript.js"></script>
+
 	</head>
 
 	<body>
+		<header>
+			<p><em>Buy things, OK?!</em></p>
+			<p>this is the header</p>
+		</header>
+		<div id="wrap">
+			<div id="checkout_steps">
+
+				<!-- 1. confirm cart contents -->
+				<div id="section_1" class="section">
+					<div id="section1-1" class="inner_section">
+						<p>1 - confirm cart contents</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+						<button>CHECKOUT >></button>
+					</div>
+				</div>
+
+
+				<!-- 2. shipping destination -->
+				<div id="section_2" class="section">
+					<div id="section2-1" class="inner_section">
+						<p>2 - shipping details</p>
+						<form>
+							<label for="same_address">Same as billing address</label>
+							<input type="checkbox" />
+
+							<label for="shipment_name">Recipient name</label>
+							<input type="text" name="first_name" placeholder="" required="" maxlength="50" />
+
+							<label for="new_username">Address Line 1</label>
+							<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
+
+							<label for="new_username">Address Line 2</label>
+							<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
+
+							<label for="new_username">Address Line 3</label>
+							<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
+
+							<label for="new_username">Telephone Number</label>
+							<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
+						</form>
+						<button>CONTINUE</button>
+					</div>
+				</div>
+
+
+				<!-- 3. billing details & final price -->
+				<div id="section_3" class="section">
+					<div id="section3-1" class="inner_section">
+						<p>3 - billing details</p>
+						<form>
+							<label for="first_name">First Name</label>
+							<input type="text" name="first_name" placeholder="" required="" maxlength="50" />
+
+							<label for="last_name">Last Name</label>
+							<input type="text" name="last_name" placeholder="" required="" maxlength="50" />
+
+							<label for="new_username">Address Line 1</label>
+							<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
+
+							<label for="new_username">Address Line 2</label>
+							<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
+
+							<label for="new_username">Address Line 3</label>
+							<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
+
+							<label for="new_username">Telephone Number</label>
+							<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
+
+							<h3>Payment method</h3>
+							<label for="trans_type">Credit card</label>
+							<input type="radio" name="trans_type" value="credit_card">
+							
+							<label for="trans_type">Direct withdraw</label>
+							<input type="radio" name="trans_type" value="direct withdrawl">
+
+							<h4>Credit card</h4>
+
+							<label for="new_username">credit card number</label>
+							<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
+
+							<label for="new_username">Expiration date</label>
+							<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
+
+							<label for="new_username">type of card</label>
+							<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
+
+							<label for="new_username">CSV</label>
+							<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
+
+							<h4>Direct Withdraw</h4>
+							<label for="new_username">Bank account number</label>
+							<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
+
+							<label for="new_username">Routing number</label>
+							<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
+
+							<label for="new_username">Bank phone number</label>
+							<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
+						</form>
+						<button>CONTINUE</button>
+					</div>
+				</div>
+
+
+				<!-- 4. check the details -->
+				<div id="section_4" class="section">
+					<div id="section4-1" class="inner_section">
+						<p>4 - confirm one last time</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+						<button>PURCHASE!!</button>
+					</div>
+				</div>
+
+
+				<!-- 5. purchase confirmation -->
+				<div id="section_5" class="section">
+					<div id="section5-1" class="inner_section">
+						<p>!! - You're all done!!</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="cart_contents">
+				<p>CART CONTENTS WILL BE HERE AT ALL TIMES</p>
+			</div>
+
+		</div>
+
+
+
+		<!--
 		<h2>Login/Register (optional)</h2>
 		<h3>Login</h3>
 		<form>
@@ -78,25 +216,5 @@
 			<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
 		</form>
 
-		<h2>Shipping</h2>
-		<form>
-			<label for="same_address">Same as billing address</label>
-			<input type="checkbox" />
-
-			<label for="shipment_name">Recipient name</label>
-			<input type="text" name="first_name" placeholder="" required="" maxlength="50" />
-
-			<label for="new_username">Address Line 1</label>
-			<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
-
-			<label for="new_username">Address Line 2</label>
-			<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
-
-			<label for="new_username">Address Line 3</label>
-			<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
-
-			<label for="new_username">Telephone Number</label>
-			<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
-		</form>
 	</body>
 </html>
