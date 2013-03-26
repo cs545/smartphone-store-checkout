@@ -188,3 +188,9 @@ div#cart_contents {
 	height: 600px;
 	margin: 10px 0;
 }
+
+#billingdetails label.error {
+	margin-left: 10px;
+	width: auto;
+	display: inline;
+}
