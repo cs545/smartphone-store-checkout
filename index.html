@@ -9,30 +9,43 @@
 		<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.js"></script>
 		<script type="text/javascript" src="./js/jscript.js"></script>
 
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,800' rel='stylesheet' type='text/css'>
+
 	</head>
 
 	<body>
 		<header>
-			<p><em>Buy things, OK?!</em></p>
-			<p>this is the header</p>
+			<div id="head_wrap">
+				<img src="./img/buy-stuff-bag.png" height="96">
+				<h1><span>BUY-STUFF</span>.com</h1>
+			</div>
 		</header>
 		<div id="wrap">
 			<div id="checkout_steps">
-
-				<!-- 1. confirm cart contents -->
-				<div id="section_1" class="section">
+				<!-- <div class="title_area"></div> -->
+				<!-- 1. New user?? - this is always a "yes" -->
+				<div id="section_1" class="section active">
+					<div class="title_area"></div>
+					<div class="section_area"></div>
+					<div class="section_number" id="section_number_1">1</div>
+					<div class="next_section_number section_number" id="section_number_2">2</div>
+					<h2 class="section_title">sign in (optional)</h2>
 					<div id="section1-1" class="inner_section">
-						<p>1 - confirm cart contents</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-						<button>CHECKOUT >></button>
+						<h3>New user?</h3>
+						<button class="next_step">CHECKOUT</button>
+						<h3>Returning user?</h3>
+						<button>SIGN IN</button>
 					</div>
 				</div>
 
 
 				<!-- 2. shipping destination -->
 				<div id="section_2" class="section">
+					<div class="title_area"></div>
+					<div class="section_area"></div>
+					<div class="next_section_number section_number" id="section_number_3">3</div>
+					<h2 class="section_title">shipping details</h2>
 					<div id="section2-1" class="inner_section">
-						<p>2 - shipping details</p>
 						<form>
 							<label for="same_address">Same as billing address</label>
 							<input type="checkbox" />
@@ -52,15 +65,18 @@
 							<label for="new_username">Telephone Number</label>
 							<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
 						</form>
-						<button>CONTINUE</button>
+						<button class="next_step">CONTINUE</button>
 					</div>
 				</div>
 
 
 				<!-- 3. billing details & final price -->
 				<div id="section_3" class="section">
+					<div class="title_area"></div>
+					<div class="section_area"></div>
+					<div class="next_section_number section_number" id="section_number_4">4</div>
+					<h2 class="section_title">billing details</h2>
 					<div id="section3-1" class="inner_section">
-						<p>3 - billing details</p>
 						<form>
 							<label for="first_name">First Name</label>
 							<input type="text" name="first_name" placeholder="" required="" maxlength="50" />
@@ -111,23 +127,29 @@
 							<label for="new_username">Bank phone number</label>
 							<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
 						</form>
-						<button>CONTINUE</button>
+						<button class="next_step">CONTINUE</button>
 					</div>
 				</div>
 
 
 				<!-- 4. check the details -->
 				<div id="section_4" class="section">
+					<div class="title_area"></div>
+					<div class="section_area"></div>
+					<div class="next_section_number section_number" id="section_number_5">!</div>
+					<h2 class="section_title">confirm your order</h2>
 					<div id="section4-1" class="inner_section">
-						<p>4 - confirm one last time</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-						<button>PURCHASE!!</button>
+						<button class="next_step">PURCHASE!!</button>
 					</div>
 				</div>
 
 
 				<!-- 5. purchase confirmation -->
 				<div id="section_5" class="section">
+					<div class="title_area"></div>
+					<div class="section_area"></div>
+					<h2 class="section_title">order complete!</h2>
 					<div id="section5-1" class="inner_section">
 						<p>!! - You're all done!!</p>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
