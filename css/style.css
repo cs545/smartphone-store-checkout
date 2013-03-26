@@ -14,6 +14,58 @@ p {
 	padding: 10px;
 }
 
+button {
+	margin: 5px;
+	cursor: pointer;
+	width: 125px;
+	color: white;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 13px;
+	padding: 9px 15px;
+	background-color: #35e114;
+	background: -moz-linear-gradient(top,#35e114 0%,#327b24);
+	background: -webkit-gradient(linear, left top, left bottom, from(#35e114), to(#327b24));
+	border: 1px solid #3c6c33;
+	        border-radius: 4px;
+	   -moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	        box-shadow: inset 1px 1px 3px rgba(255,255,255,0.4);
+	   -moz-box-shadow: inset 1px 1px 3px rgba(255,255,255,0.4);
+	-webkit-box-shadow: inset 1px 1px 3px rgba(255,255,255,0.4);
+}
+
+button:hover {
+	background-color: #35ff0d;
+	background: -moz-linear-gradient(top,#35ff0d 0%,#217411);
+	background: -webkit-gradient(linear, left top, left bottom, from(#35ff0d), to(#217411));
+}
+
+button:active {
+	        box-shadow: inset -1px -1px 3px rgba(255,255,255,0.4);
+	   -moz-box-shadow: inset -1px -1px 3px rgba(255,255,255,0.4);
+	-webkit-box-shadow: inset -1px -1px 3px rgba(255,255,255,0.4);
+}
+
+button.back_step {
+	background-color: #bfbfbf;
+	background: -moz-linear-gradient(top,#bfbfbf 0%,#989898);
+	background: -webkit-gradient(linear, left top, left bottom, from(#bfbfbf), to(#989898));
+	border: 1px solid #3b3b3b;
+}
+
+button.back_step:hover {
+	background-color: #d0d0d0;
+	background: -moz-linear-gradient(top,#d0d0d0 0%,#a4a4a4);
+	background: -webkit-gradient(linear, left top, left bottom, from(#d0d0d0), to(#a4a4a4));
+}
+
+button.back_step:active {
+	        box-shadow: inset -1px -1px 3px rgba(255,255,255,0.4);
+	   -moz-box-shadow: inset -1px -1px 3px rgba(255,255,255,0.4);
+	-webkit-box-shadow: inset -1px -1px 3px rgba(255,255,255,0.4);
+}
 
 
 /**************************/
@@ -83,7 +135,10 @@ div.inner_section {
 div#section_1 {
 	border-left: 1px solid #5e5e5e;
 	z-index: 10;
+	border-top-left-radius: 5px;
 }
+
+div#section_5 {border-top-right-radius: 4px;}
 
 div#section_1 { left: 0;}
 div#section_2 { left: 41px;}
@@ -136,6 +191,9 @@ h2.section_title {
 	z-index: -1;
 }
 
+#section_1 .title_area { border-top-left-radius: 4px; }
+#section_5 .title_area { border-top-right-radius: 4px; }
+
 .section_area {
 	position: absolute;
 	top:43px;
@@ -148,6 +206,17 @@ h2.section_title {
 .active .section_area { background-color: white;}
 .active .title_area   { background-color: #ded6d4; border-bottom: 1px solid #5e5e5e;}
 /*.active .section_number { background-color: #61b13d; border: 1px solid #6c725f; }*/
+
+.section button.next_step {float:right;}
+.section button.back_step {float:left;}
+
+.section .button_area {
+	height: 50px;
+	position: absolute;
+	top: 405px;
+	width: 490px;
+}
+
 
 /**************************/
 /****** END CHECKOUT ******/
@@ -164,16 +233,26 @@ h2.section_title {
 #section_1 h3 {
 	display: block;
 	float: left;
-	width: 250px;
+	width: 45%;
+	height: 67px;
+	padding: 8px 0 0 40px;
+	font-family: sans-serif;
+	font-size: 20px;
+
+}
+
+#section_1 div.button_area {
+	position: relative;
+	top: 0;
+	float: right;
+	width: 45%;
+	height: 75px;
 }
 
 #section_1 button {
-	float: left;
-	width: 100px;
+	float:left;
+	width: 115px;
 }
-
-
-
 
 /**************************/
 /***** END SECTION 1 ******/

@@ -8,10 +8,10 @@ $(document).ready(function() {
 
 
 
-	$(".section button.next_step").click(function(){
-		$(this).parent().parent(".section").toggleClass("active", 4000);
-		$(this).parent(".inner_section").siblings(".section_title").fadeOut(300);
-		$(this).parent(".inner_section").fadeOut(300, function(){
+	$("button.next_step").click(function(){
+		$(this).parent().parent().parent(".section").toggleClass("active", 4000);
+		$(this).parent().parent(".inner_section").siblings(".section_title").fadeOut(300);
+		$(this).parent().parent(".inner_section").fadeOut(300, function(){
 			$(this).siblings(".title_area").animate({width:'39px'}, 500);
 			$(this).parent(".section").animate({width:'39px'}, 500, function(){
 				$(this).css("z-index", "auto");
