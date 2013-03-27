@@ -268,8 +268,11 @@ div#cart_contents {
 	margin: 10px 0;
 }
 
-#billingdetails label.error {
+label.error {
+	font-size:11px;
+	background-color:#D7DF01;
+	color:#000000;
+	padding:3px;
 	margin-left: 10px;
 	width: auto;
-	display: inline;
 }
