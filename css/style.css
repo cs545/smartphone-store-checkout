@@ -269,10 +269,12 @@ div#cart_contents {
 }
 
 label.error {
-	font-size:11px;
-	background-color:#D7DF01;
-	color:#000000;
-	padding:3px;
+	font-size:12px;
+	background-color:#cc0000;
+	color:#FFFFFF;
+	padding:5px;
 	margin-left: 10px;
-	width: auto;
+	-webkit-border-radius: 22px;
+        -moz-border-radius: 22px;
+        border-radius: 22px;
 }
