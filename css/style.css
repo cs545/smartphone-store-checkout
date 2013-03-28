@@ -212,8 +212,8 @@ h2.section_title {
 
 .section .button_area {
 	height: 50px;
-	position: relative;
-	top: 405px;
+	position: absolute;
+	top: 605px;
 	width: 490px;
 }
 
