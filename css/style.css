@@ -109,7 +109,7 @@ div#checkout_steps {
 	margin: 10px 0;
 	float: left;
 	width: auto;
-	height: 450px;
+	height: 650px;
 	width: 651px;
 	position: relative;
 }
@@ -197,7 +197,7 @@ h2.section_title {
 .section_area {
 	position: absolute;
 	top:43px;
-	height: 407px;
+	height: 607px;
 	width: inherit;
 	background-color: #f1f1f1;
 	z-index: -1;
@@ -212,7 +212,7 @@ h2.section_title {
 
 .section .button_area {
 	height: 50px;
-	position: absolute;
+	position: relative;
 	top: 405px;
 	width: 490px;
 }
