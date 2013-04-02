@@ -127,10 +127,15 @@ div#checkout_steps {
 	margin: 10px 0;
 	float: left;
 	width: auto;
-	height: 450px;
 	width: 651px;
 	position: relative;
 }
+
+/* these are all the elements affecting the section height
+ * if you add or subtract a value, add it to all 3 */
+div#checkout_steps    { height: 530px; }
+.section .button_area { top: 480px; }
+.section_area         { height: 487px; }
 
 div.section {
 	max-width: 490px;
@@ -194,10 +199,7 @@ div#section_number_1 {
 	margin-left: 4px;
 }
 
-div#section_0 {
-	border: none;
-
-}
+div#section_0 { border: none; }
 
 div.next_section_number {
 	position: relative;
@@ -229,7 +231,6 @@ h2.section_title {
 .section_area {
 	position: absolute;
 	top:43px;
-	height: 407px;
 	width: inherit;
 	background-color: #d1d1d1;
 	z-index: -1;
@@ -245,7 +246,6 @@ h2.section_title {
 .section .button_area {
 	height: 50px;
 	position: absolute;
-	top: 400px;
 	width: 490px;
 	left: 0;
 }
@@ -366,13 +366,19 @@ input {
 
 #sec-3-1-same_address input { margin-top: 12px; }
 
-#sec-3-1-same_address label, #sec-3-1-same_address input  { width: auto;}
-#sec-3-1-fname, #sec-3-1-lname, #sec-3-1-name input       { width: 200px; }
-#sec-3-1-add1 input, #sec-3-1-add2 input                  { width: 250px; }
-#sec-3-1-city, #sec-3-1-city input                        { width: 150px; }
-#sec-3-1-state, #sec-3-1-state select                     { width: 75px;  }
-#sec-3-1-zip, #sec-3-1-zip input                          { width: 80px;  }
-#sec-3-1-phone input                                      { width: 120px; }
+#sec-3-1-same_address label, #sec-3-1-same_address input     { width: auto;  }
+#sec-3-1-fname, #sec-3-1-lname, #sec-3-1-name input          { width: 200px; }
+#sec-3-1-add1 input, #sec-3-1-add2 input                     { width: 250px; }
+#sec-3-1-city, #sec-3-1-city input                           { width: 150px; }
+#sec-3-1-state, #sec-3-1-state select                        { width: 75px;  }
+#sec-3-1-zip, #sec-3-1-zip input                             { width: 80px;  }
+#sec-3-1-phone input                                         { width: 120px; }
+#sec-3-1-payment_method label, #sec-3-1-payment_method input { width: auto;  }
+
+#sec-3-1-payment_method input { margin: 12px 10px 0 10px; }
+
+#sec-3-1-payment_method label#trans_type_dw_label {padding-left: 50px;}
+
 
 #sec-3-1-state, #sec-3-1-lname, #sec-3-1-zip {
 	padding-left: 20px;
