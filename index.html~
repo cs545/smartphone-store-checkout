@@ -56,7 +56,7 @@
 					<div class="next_section_number section_number" id="section_number_3">3</div>
 					<h2 class="section_title">shipping details</h2>
 					<div id="section2-1" class="inner_section">
-						<form id="shipping_form" class="form_submit" name="shipping" method="post">
+						<form id="shipping_form" class="form_submit" name="shipping" action="" method="post">
 							<fieldset>
 								<div id="sec-2-1-fname" class="sec-2-1-formdiv">
 									<label for="recv_first_name">first name</label>
