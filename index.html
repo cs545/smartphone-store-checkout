@@ -56,7 +56,7 @@
 					<div class="next_section_number section_number" id="section_number_3">3</div>
 					<h2 class="section_title">shipping details</h2>
 					<div id="section2-1" class="inner_section">
-						<form id="shipping_form" class="form_submit" name="shipping" action="index.html" onsubmit="">
+						<form id="shipping_form" name="shipping" action="index.html" onsubmit="" method="post">
 							<fieldset>
 								<div id="sec-2-1-fname" class="sec-2-1-formdiv">
 									<label for="recv_first_name">first name</label>
@@ -69,7 +69,7 @@
 								</div>
 
 								<div id="sec-2-1-add1" class="sec-2-1-formdiv">
-									<label for="new_username">address line 1</label>
+									<label for="recv_address_1">address line 1</label>
 									<input type="text" name="recv_address_1" id="recv_address_1" placeholder="" required="required" maxlength="50" />
 								</div>
 
@@ -153,13 +153,11 @@
 								</div>
 
 								<div class="button_area">
-									<button type="submit" class="next_step_submit">CONTINUE</button>
+									<button class="back_step">BACK</button>
+									<button type="submit" class="next_step">CONTINUE</button>
 								</div>
 							</fieldset>
 						</form>
-						<div class="button_area back_button_area">
-							<button class="back_step">BACK</button>
-						</div>
 					</div>
 				</div>
 
@@ -171,7 +169,7 @@
 					<div class="next_section_number section_number" id="section_number_4">4</div>
 					<h2 class="section_title">billing details</h2>
 					<div id="section3-1" class="inner_section">
-						<form id="billing_form" class="form_submit" name="billing" action="index.html" onsubmit="">
+						<form method="post" action="" id="billingdetails">
 
 							<fieldset>
 								<div id="sec-3-1-same_address" class="sec-3-1-formdiv">
@@ -287,58 +285,36 @@
 									<input type="radio" id="trans_type_dw" name="trans_type" value="direct withdraw">
 								</div>
 
+								<!--
+								<h4>Credit card</h4>
 
-								<div id="sec-3-1-cc_payment_info" class="sec-3-1-formdiv">
-									<div id="sec-3-1-cc_number" class="sec-3-1-formdiv">
-										<label for="cc_number">credit card number</label>
-										<input type="text" name="cc_number" id="cc_number" placeholder="" maxlength="50" />
-									</div>
+								<label for="new_username">credit card number</label>
+								<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
 
-									<div id="sec-3-1-cc_expiry_date" class="sec-3-1-formdiv">
-										<label for="cc_expiry_date">expiration date (MM-YY)</label>
-										<input type="text" name="cc_expiry_date" id="cc_expiry_date" placeholder="" maxlength="50" />
-									</div>
+								<label for="new_username">Expiration date</label>
+								<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
 
-									<div id="sec-3-1-cc_card_type" class="sec-3-1-formdiv">
-										<label for="cc_card_type">type of card</label>
-										<select name="cc_card_type" id="cc_card_type">
-											<option>select</option>
-											<option>American Express</option>
-											<option>Discover Card</option>
-											<option>Mastercard</option>
-											<option>Visa</option>
-										</select>
-									</div>
+								<label for="new_username">type of card</label>
+								<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
 
-									<div id="sec-3-1-cc_csv" class="sec-3-1-formdiv">
-										<label for="cc_csv">CSV</label>
-										<input type="text" name="cc_csv" id="cc_csv" placeholder="" maxlength="50" />
-									</div>
-								</div>
+								<label for="new_username">CSV</label>
+								<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
 
-								<div id="sec-3-1-dw_payment_info" class = "sec-3-1-formdiv">
-									<label for="dw_account">account number</label>
-									<input type="text" name="dw_account" id="dw_account" placeholder="" maxlength="50" />
+								<h4>Direct Withdraw</h4>
+								<label for="new_username">Bank account number</label>
+								<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
 
-									<label for="dw_routing_no">routing number</label>
-									<input type="text" name="dw_routing_no" id="dw_routing_no" placeholder="" maxlength="50" />
+								<label for="new_username">Routing number</label>
+								<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
 
-									<label for="dw_bank_phone">bank phone number</label>
-									<input type="text" name="dw_bank_phone" id="dw_bank_phone" placeholder="" maxlength="50" />
-								</div>
-
-
-
-								<div class="button_area">
-									<button type="submit" class="next_step_submit">CONTINUE</button>
-								</div>
+								<label for="new_username">Bank phone number</label>
+								<input type="text" name="new_username" placeholder="" required="" maxlength="50" />
+								-->
+							
 							</fieldset>
 						</form>
-
-						<div class="button_area back_button_area">
-							<button class="back_step">BACK</button>
-						</div>
-
+						<div class="button_area"><button class="back_step">BACK</button></div>
+						<div class="button_area"><button class="next_step">CONTINUE</button></div>
 					</div>
 				</div>
 
@@ -351,10 +327,8 @@
 					<h2 class="section_title">confirm your order</h2>
 					<div id="section4-1" class="inner_section">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-						<div class="button_area">
-							<button class="back_step">BACK</button>
-							<button type="submit" class="next_step">PURCHASE!</button>
-						</div>
+						<div class="button_area"><button class="back_step">BACK</button></div>
+						<div class="button_area"><button class="next_step">PURCHASE!!</button></div>
 					</div>
 				</div>
 
