@@ -22,11 +22,11 @@ button {
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 	font-family: sans-serif;
 	font-weight: bold;
-	font-size: 13px;
-	padding: 9px 15px;
-	background-color: #35e114;
-	background: -moz-linear-gradient(top,#15b00e 0%,#147c0f);
-	background: -webkit-gradient(linear, left top, left bottom, from(#15b00e), to(#147c0f));
+	font-size: 15px;
+	padding: 9px 13px;
+	background-color: #5fbd19;
+	background: -moz-linear-gradient(top,#5fbd19 0%,#52a615);
+	background: -webkit-gradient(linear, left top, left bottom, from(#5fbd19), to(#52a615));
 	border: 1px solid #3c6c33;
 	        border-radius: 4px;
 	   -moz-border-radius: 4px;
@@ -37,9 +37,9 @@ button {
 }
 
 button:hover {
-	background-color: #16d00d;
-	background: -moz-linear-gradient(top,#16d00d 0%,#18ae10);
-	background: -webkit-gradient(linear, left top, left bottom, from(#16d00d), to(#18ae10));
+	background-color: #65c91b;
+	background: -moz-linear-gradient(top,#65c91b 0%,#59b118);
+	background: -webkit-gradient(linear, left top, left bottom, from(#65c91b), to(#59b118));
 }
 
 button:active {
@@ -133,9 +133,9 @@ div#checkout_steps {
 
 /* these are all the elements affecting the section height
  * if you add or subtract a value, add it to all 3 */
-div#checkout_steps    { height: 530px; }
-.section .button_area { top: 480px; }
-.section_area         { height: 487px; }
+div#checkout_steps    { height: 550px; }
+.section .button_area { top: 500px;    }
+.section_area         { height: 507px; }
 
 div.section {
 	max-width: 490px;
@@ -226,7 +226,7 @@ h2.section_title {
 #section_0 .title_area, #section_1 .title_area { border-top-left-radius: 4px; }
 #section_5 .title_area { border-top-right-radius: 4px; }
 #section_1 .section_area, #section_0 .section_area { border-bottom-left-radius: 4px;}
-#section_5 .inner_section { border-bottom-right-radius: 4px;}
+#section_5 .section_area { border-bottom-right-radius: 4px;}
 
 .section_area {
 	position: absolute;
@@ -238,9 +238,8 @@ h2.section_title {
 
 .active .section_area { background-color: white;}
 .active .title_area   { background-color: #ded6d4; border-bottom: 1px solid #9a9a9a;}
-/*.active .section_number { background-color: #61b13d; border: 1px solid #6c725f; }*/
 
-.section button.next_step {float:right;}
+.section button.next_step, .section button.next_step_submit {float:right;}
 .section button.back_step {float:left;}
 
 .section .button_area {
@@ -249,6 +248,8 @@ h2.section_title {
 	width: 490px;
 	left: 0;
 }
+
+.section div.back_button_area { width: 200px; }
 
 label {
 	font-family: sans-serif;
@@ -327,9 +328,11 @@ input {
 
 #section2-1 label {	margin-top: 10px; }
 
-#sec-2-1-fname, #sec-2-1-lname, #sec-2-1-name input { width: 200px; }
+#sec-2-1-fname, #sec-2-1-lname                      { width: 200px; }
+#sec-2-1-fname input, #sec-2-1-lname input          { width: 190px; }
 #sec-2-1-add1 input, #sec-2-1-add2 input            { width: 250px; }
-#sec-2-1-city, #sec-2-1-city input                  { width: 150px; }
+#sec-2-1-city                                       { width: 150px; }
+#sec-2-1-city input                                 { width: 140px; }
 #sec-2-1-state, #sec-2-1-state select               { width: 75px;  }
 #sec-2-1-zip, #sec-2-1-zip input                    { width: 80px;  }
 #sec-2-1-phone input                                { width: 120px; }
@@ -366,21 +369,29 @@ input {
 
 #sec-3-1-same_address input { margin-top: 12px; }
 
-#sec-3-1-same_address label, #sec-3-1-same_address input     { width: auto;  }
-#sec-3-1-fname, #sec-3-1-lname, #sec-3-1-name input          { width: 200px; }
-#sec-3-1-add1 input, #sec-3-1-add2 input                     { width: 250px; }
-#sec-3-1-city, #sec-3-1-city input                           { width: 150px; }
-#sec-3-1-state, #sec-3-1-state select                        { width: 75px;  }
-#sec-3-1-zip, #sec-3-1-zip input                             { width: 80px;  }
-#sec-3-1-phone input                                         { width: 120px; }
-#sec-3-1-payment_method label, #sec-3-1-payment_method input { width: auto;  }
+#sec-3-1-same_address label, #sec-3-1-same_address input       { width: auto;  }
+#sec-3-1-fname, #sec-3-1-lname, #sec-3-1-name input            { width: 200px; }
+#sec-3-1-add1 input, #sec-3-1-add2 input                       { width: 250px; }
+#sec-3-1-city                                                  { width: 150px; }
+#sec-3-1-city input                                            { width: 140px; }
+#sec-3-1-state, #sec-3-1-state select                          { width: 75px;  }
+#sec-3-1-zip, #sec-3-1-zip input                               { width: 80px;  }
+#sec-3-1-phone input                                           { width: 120px; }
+#sec-3-1-payment_method label, #sec-3-1-payment_method input   { width: auto;  }
+#sec-3-1-cc_number                                             { width: 240px; }
+#sec-3-1-cc_number input                                       { width: 230px; }
+#sec-3-1-cc_expiry_date                                        { width: 150px; }
+#sec-3-1-cc_expiry_date  input                                 { width: 80px;  }
+#sec-3-1-cc_card_type, #sec-3-1-cc_card_type select            { width: 120px; }
+#sec-3-1-cc_csv                                                { width: 150px; }
+#sec-3-1-cc_csv  input                                         { width: 80px;  }
+
 
 #sec-3-1-payment_method input { margin: 12px 10px 0 10px; }
-
 #sec-3-1-payment_method label#trans_type_dw_label {padding-left: 50px;}
 
 
-#sec-3-1-state, #sec-3-1-lname, #sec-3-1-zip {
+#sec-3-1-state, #sec-3-1-lname, #sec-3-1-zip, #sec-3-1-cc_expiry_date, #sec-3-1-cc_csv {
 	padding-left: 20px;
 }
 
@@ -391,6 +402,10 @@ input {
 	     -o-box-shadow: 0 1px 4px #4e4e4e inset;
 	   -moz-box-shadow: 0 1px 4px #4e4e4e inset;
 	-webkit-box-shadow: 0 1px 4px #4e4e4e inset;
+}
+
+#sec-3-1-cc_payment_info, #sec-3-1-dw_payment_info {
+	display: none;
 }
 
 /**************************/

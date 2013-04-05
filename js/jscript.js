@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+	var current_section = 1;
+	console.log(current_section);
 				
 	$('.inner_section').hide();
 	$('.section_title').hide();
@@ -8,9 +11,11 @@ $(document).ready(function() {
 	$('#section_1 .inner_section').show();
 	$('#section_1 .section_title').show();
 
-	$('#shipping_form').submit(function(event){
+	/*this function is for all form submissions*/
+	$('.form_submit').submit(function(event){
 		event.preventDefault();
-		console.log(this);
+		current_section++;
+		console.log(current_section);
 		$(this).parent().parent(".section").toggleClass("active", 4000);
 		$(this).parent().parent(".section").prev().children(".section_number").css({ opacity: 0.5 });
 		$(this).parent(".inner_section").siblings(".section_title").fadeOut(300);
@@ -28,7 +33,10 @@ $(document).ready(function() {
 		});
 	});
 
+	/* this function is for buttons that continue, but do not involve submitting a form */
 	$("button.next_step").click(function(){
+		current_section++;
+		console.log(current_section);
 		$(this).parent().parent().parent(".section").toggleClass("active", 4000);
 		$(this).parent().parent().parent(".section").prev().children(".section_number").css({ opacity: 0.5 });
 		$(this).parent().parent(".inner_section").siblings(".section_title").fadeOut(300);
@@ -46,9 +54,28 @@ $(document).ready(function() {
 		});
 	});
 
+	$("button.back_step").click(function(){
+		current_section--;
+		console.log(current_section);
+		$(this).parent().parent().parent(".section").toggleClass("active", 4000);
+		$(this).parent().parent().parent(".section").prev().children(".section_number").css({ opacity: 0.5 });
+		$(this).parent().parent(".inner_section").siblings(".section_title").fadeOut(300);
+		$(this).parent().parent(".inner_section").fadeOut(300, function(){
+			$(this).parent(".section").css("z-index", "auto");
+			$(this).parent(".section").prev().css("z-index", "10");
+			$(this).parent(".section").prev().children(".title_area").animate({width:'490px'}, 500);
+			$(this).parent(".section").prev().animate({width:'490px'}, 500, function() {
+				$(this).toggleClass("active", 4000);
+				$(this).children(".inner_section").fadeIn(300);
+				$(this).children(".section_title").fadeIn(300);
+				$(this).prev().children(".section_number").css({ opacity: 1.0 });
+			}).css('overflow', 'visible');
+		});
+	});
+
 
 	
-
+	/* This function will copy address fields from the shipping info */
 	$("#sec-3-1-same_address input").click(function() {
 		if ( $(this).is(":checked") ) {
 			$(".bill_address input").attr("readonly", "readonly").addClass("pre-fill");
@@ -64,6 +91,23 @@ $(document).ready(function() {
 			$(".bill_address input").attr("readonly", "").removeClass("pre-fill").val("");
 			$(".bill_address select").removeAttr("disabled").val("select")
   		}
+	});
+
+	/* This causes the credit or direct withdraw fields to appear */
+	$("#sec-3-1-payment_method input").click(function() {
+		if ( $("#trans_type_cc").is(":checked") ) {
+			$("#sec-3-1-dw_payment_info").fadeOut(300, function() {
+				$("#sec-3-1-cc_payment_info").fadeIn(300);
+			});
+		} else if ( $("#trans_type_dw").is(":checked") ) {
+			$("#sec-3-1-cc_payment_info").fadeOut(300, function() {
+				$("#sec-3-1-dw_payment_info").fadeIn(300);
+			});
+		} else {
+			$("#sec-3-1-cc_payment_info").fadeOut(300);
+			$("#sec-3-1-dw_payment_info").fadeOut(300);
+		}
+
 	});
 
 
