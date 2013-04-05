@@ -9,7 +9,7 @@
 		<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.js"></script>
 		<script type="text/javascript" src="./js/jscript.js"></script>
 		<script type="text/javascript" src="./js/jquery.validate.js"></script>
-		<script type="text/javascript" src="./js/Validation.js"></script>
+		<script type="text/javascript" src="./js/validation.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,800' rel='stylesheet' type='text/css'>
 
 	</head>
@@ -56,7 +56,7 @@
 					<div class="next_section_number section_number" id="section_number_3">3</div>
 					<h2 class="section_title">shipping details</h2>
 					<div id="section2-1" class="inner_section">
-						<form id="shipping_form" class="form_submit" name="shipping" method="post">
+						<form id="shipping_form" class="form_submit" name="shipping" action="index.html" >
 							<fieldset>
 								<div id="sec-2-1-fname" class="sec-2-1-formdiv">
 									<label for="recv_first_name">first name</label>
@@ -143,7 +143,7 @@
 								</div>
 
 								<div id="sec-2-1-zip" class="sec-2-1-formdiv sec-2-1-city-state">
-									<label for="recv_zipe">zip code</label>
+									<label for="recv_zip">zip code</label>
 									<input type="text" name="recv_zip" id="recv_zip" placeholder="" required="required" maxlength="50" />
 								</div>
 
@@ -171,7 +171,7 @@
 					<div class="next_section_number section_number" id="section_number_4">4</div>
 					<h2 class="section_title">billing details</h2>
 					<div id="section3-1" class="inner_section">
-						<form id="billing_form billingdetails" class="form_submit" name="billing" action="index.html" onsubmit="" method="post">
+						<form id="billing_form billingdetails" class="form_submit" name="billing" action="">
 
 							<fieldset>
 								<div id="sec-3-1-same_address" class="sec-3-1-formdiv">

@@ -12,25 +12,56 @@ $(document).ready(function() {
 	$('#section_1 .section_title').show();
 
 	/*this function is for all form submissions*/
-	$('.form_submit').submit(function(event){
+	$('#shipping_form').submit(function(event){
 		event.preventDefault();
-		current_section++;
-		console.log(current_section);
-		$(this).parent().parent(".section").toggleClass("active", 4000);
-		$(this).parent().parent(".section").prev().children(".section_number").css({ opacity: 0.5 });
-		$(this).parent(".inner_section").siblings(".section_title").fadeOut(300);
-		$(this).parent(".inner_section").fadeOut(300, function(){
-			$(this).siblings(".title_area").animate({width:'39px'}, 500);
-			$(this).parent(".section").animate({width:'39px'}, 500, function(){
-				$(this).css("z-index", "auto");
-				$(this).next().css("z-index", "10");
-				$(this).children(".section_number").css("z-index", "11");
-				$(this).next().toggleClass("active", 4000);
-				$(this).next().children(".inner_section").fadeIn(300);
-				$(this).next().children(".section_title").fadeIn(300);
-				$(this).children(".section_number").css({ opacity: 1.0 });
-			}).css('overflow', 'visible');
-		});
+		if ( $(this).validate({rules: {	recv_first_name: "required recv_first_name",recv_last_name: "required recv_last_name",	recv_address_1: "required recv_address_1",	recv_city: "required recv_city",recv_zip: "required recv_zip",	recv_telephone: "required recv_telephone",	},	}).form() ) {
+			current_section++;
+			console.log(current_section);
+			$(this).parent().parent(".section").toggleClass("active", 4000);
+			$(this).parent().parent(".section").prev().children(".section_number").css({ opacity: 0.5 });
+			$(this).parent(".inner_section").siblings(".section_title").fadeOut(300);
+			$(this).parent(".inner_section").fadeOut(300, function(){
+				$(this).siblings(".title_area").animate({width:'39px'}, 500);
+				$(this).parent(".section").animate({width:'39px'}, 500, function(){
+					$(this).css("z-index", "auto");
+					$(this).next().css("z-index", "10");
+					$(this).children(".section_number").css("z-index", "11");
+					$(this).next().toggleClass("active", 4000);
+					$(this).next().children(".inner_section").fadeIn(300);
+					$(this).next().children(".section_title").fadeIn(300);
+					$(this).children(".section_number").css({ opacity: 1.0 });
+				}).css('overflow', 'visible');
+			});
+			} else {
+				console.log("nogo");
+		}
+
+	});
+
+	$('#billing_form').submit(function(event){
+		event.preventDefault();
+		if ( $("#billingdetails").validate({rules: {bill_first_name: "required bill_first_name",bill_last_name: "required bill_last_name",bill_address_1: "required bill_address_1",},}).form() ) {
+			current_section++;
+			console.log(current_section);
+			$(this).parent().parent(".section").toggleClass("active", 4000);
+			$(this).parent().parent(".section").prev().children(".section_number").css({ opacity: 0.5 });
+			$(this).parent(".inner_section").siblings(".section_title").fadeOut(300);
+			$(this).parent(".inner_section").fadeOut(300, function(){
+				$(this).siblings(".title_area").animate({width:'39px'}, 500);
+				$(this).parent(".section").animate({width:'39px'}, 500, function(){
+					$(this).css("z-index", "auto");
+					$(this).next().css("z-index", "10");
+					$(this).children(".section_number").css("z-index", "11");
+					$(this).next().toggleClass("active", 4000);
+					$(this).next().children(".inner_section").fadeIn(300);
+					$(this).next().children(".section_title").fadeIn(300);
+					$(this).children(".section_number").css({ opacity: 1.0 });
+				}).css('overflow', 'visible');
+			});
+			} else {
+				console.log("nogo");
+		}
+
 	});
 
 	/* this function is for buttons that continue, but do not involve submitting a form */
