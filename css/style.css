@@ -22,7 +22,7 @@ button {
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 	font-family: sans-serif;
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 14px;
 	padding: 9px 13px;
 	background-color: #5fbd19;
 	background: -moz-linear-gradient(top,#5fbd19 0%,#52a615);
@@ -252,7 +252,7 @@ h2.section_title {
 .section div.back_button_area { width: 200px; }
 
 label {
-	font-family: sans-serif;
+	font-family: Arial, sans-serif;
 	font-weight: bold;
 	font-size: 12px;
 	color: #3f3b3b;
@@ -321,25 +321,30 @@ input {
 /******** SECTION 2 *******/
 /**************************/
 
-#section2-1 input, #section2-1 label, .sec-2-1-formdiv {
+#section2-1 input, .sec-2-1-formdiv, .label_container {
 	float: left;
 	width: 100%;
 }
 
-#section2-1 label {	margin-top: 10px; }
-
-#sec-2-1-fname, #sec-2-1-lname                      { width: 200px; }
-#sec-2-1-fname input, #sec-2-1-lname input          { width: 190px; }
-#sec-2-1-add1 input, #sec-2-1-add2 input            { width: 250px; }
-#sec-2-1-city                                       { width: 150px; }
-#sec-2-1-city input                                 { width: 140px; }
-#sec-2-1-state, #sec-2-1-state select               { width: 75px;  }
-#sec-2-1-zip, #sec-2-1-zip input                    { width: 80px;  }
-#sec-2-1-phone input                                { width: 120px; }
-
-#sec-2-1-state, #sec-2-1-lname, #sec-2-1-zip {
-	padding-left: 20px;
+#section2-1 label {
+	margin-top: 10px;
+	float: left;
+	width: auto;
 }
+
+#sec-2-1-fname, #sec-2-1-lname               { width: 230px; }
+#sec-2-1-fname input, #sec-2-1-lname input   { width: 190px; }
+#sec-2-1-add1 input, #sec-2-1-add2 input     { width: 250px; }
+#sec-2-1-city                                { width: 180px; }
+#sec-2-1-city input                          { width: 140px; }
+#sec-2-1-state                               { width: 105px; }
+#sec-2-1-state select                        { width: 75px;  }
+#sec-2-1-zip                                 { width: 180px; }
+#sec-2-1-zip input                           { width: 80px;  }
+#sec-2-1-phone input                         { width: 120px; }
+#sec-2-1-ship_op select                      { width: auto;  }
+
+
 
 /**************************/
 /***** END SECTION 2 ******/
@@ -353,7 +358,7 @@ input {
 /******** SECTION 3 *******/
 /**************************/
 
-#section3-1 input, #section3-1 label, .sec-3-1-formdiv, #section3-1 h3 {
+#section3-1 input, .sec-3-1-formdiv, .label_container, #section3-1 h3 {
 	float: left;
 	width: 100%;
 }
@@ -365,34 +370,50 @@ input {
 	font-size: 16px;
 }
 
-#section3-1 label {	margin-top: 10px; }
-
 #sec-3-1-same_address input { margin-top: 12px; }
 
+#section3-1 label {
+	margin-top: 10px;
+	float: left;
+	width: auto;
+}
+
 #sec-3-1-same_address label, #sec-3-1-same_address input       { width: auto;  }
-#sec-3-1-fname, #sec-3-1-lname, #sec-3-1-name input            { width: 200px; }
+#sec-3-1-fname, #sec-3-1-lname                                 { width: 230px; }
+#sec-3-1-fname input, #sec-3-1-lname input                     { width: 190px; }
 #sec-3-1-add1 input, #sec-3-1-add2 input                       { width: 250px; }
-#sec-3-1-city                                                  { width: 150px; }
+#sec-3-1-city                                                  { width: 180px; }
 #sec-3-1-city input                                            { width: 140px; }
-#sec-3-1-state, #sec-3-1-state select                          { width: 75px;  }
-#sec-3-1-zip, #sec-3-1-zip input                               { width: 80px;  }
-#sec-3-1-phone input                                           { width: 120px; }
+#sec-3-1-state                                                 { width: 105px; }
+#sec-3-1-state select                                          { width: 75px;  }
+#sec-3-1-zip                                                   { width: 180px; }
+#sec-3-1-zip input                                             { width: 80px;  }
+#sec-3-1-phone input                                           { width: 120px; }                  
+#sec-3-1-ship_op select                                        { width: auto;  }
+
+#sec-3-1-payment_method div.label_container                    { width: auto;  }
 #sec-3-1-payment_method label, #sec-3-1-payment_method input   { width: auto;  }
-#sec-3-1-cc_number                                             { width: 240px; }
-#sec-3-1-cc_number input                                       { width: 230px; }
+#sec-3-1-cc_number                                             { width: 245px; }
+#sec-3-1-cc_number input                                       { width: 205px; }
 #sec-3-1-cc_expiry_date                                        { width: 150px; }
 #sec-3-1-cc_expiry_date  input                                 { width: 80px;  }
-#sec-3-1-cc_card_type, #sec-3-1-cc_card_type select            { width: 120px; }
-#sec-3-1-cc_csv                                                { width: 150px; }
+#sec-3-1-cc_card_type                                          { width: 160px; }
+#sec-3-1-cc_card_type select                                   { width: 120px; }
+#sec-3-1-cc_csv                                                { width: 300px; }
 #sec-3-1-cc_csv  input                                         { width: 80px;  }
+#sec-3-1-dw_account, #sec-3-1-dw_routing                       { width: 200px; }
+#sec-3-1-dw_account input, #sec-3-1-dw_routing input           { width: 160px; }
+#sec-3-1-dw_bank_phone input                                   { width: 120px; }
 
 
 #sec-3-1-payment_method input { margin: 12px 10px 0 10px; }
 #sec-3-1-payment_method label#trans_type_dw_label {padding-left: 50px;}
 
 
-#sec-3-1-state, #sec-3-1-lname, #sec-3-1-zip, #sec-3-1-cc_expiry_date, #sec-3-1-cc_csv {
-	padding-left: 20px;
+#sec-3-1-cc_expiry_date,
+#sec-3-1-cc_csv,
+#sec-3-1-dw_routing {
+	/*padding-left: 20px;*/
 }
 
 #section3-1 input.pre-fill {
@@ -407,6 +428,13 @@ input {
 #sec-3-1-cc_payment_info, #sec-3-1-dw_payment_info {
 	display: none;
 }
+
+#section_3 #section3-1 div#sec-3-1-payment_method label.error {
+	position: absolute;
+	right: 150px;
+}
+
+
 
 /**************************/
 /***** END SECTION 3 ******/
@@ -426,15 +454,18 @@ div#cart_contents {
 	margin: 10px 0;
 }
 
-label.error {
-	font-size:11px;
-	font-weight:900;
+#section_2 #section2-1 label.error, #section_3 #section3-1 label.error {
+	font-size:10px;
+	font-weight:800;
 	background-color:#FFBABA;
-	text-shadow: 2px 2px 5px #D8000C;
+	/*text-shadow: 2px 2px 5px #D8000C;*/
 	color:#D8000C;
-	padding:5px;
-	margin-left: 10px;
+	padding: 1px 5px 3px 5px;
+	margin: 5px 0 0 5px;
 	-webkit-border-radius: 22px;
-        -moz-border-radius: 22px;
-        border-radius: 22px;
+	   -moz-border-radius: 22px;
+	        border-radius: 22px;
+	position: relative;
+	width: auto;
+	float: left;
 }
