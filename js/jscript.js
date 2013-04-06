@@ -41,9 +41,11 @@ $(document).ready(function() {
 			$("#bill_city").val( $("#recv_city").val() );
 			$("#bill_zip").val( $("#recv_zip").val() );
 			$("#bill_telephone").val( $("#recv_telephone").val() );
+			$(".bill_address label.error").hide();
   		} else {
 			$(".bill_address input").attr("readonly", "").removeClass("pre-fill").val("");
-			$(".bill_address select").removeAttr("disabled").val("select")
+			$(".bill_address select").removeAttr("disabled").val("select");
+			$(".bill_address label.error").show();
   		}
 	}
 
