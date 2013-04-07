@@ -155,7 +155,7 @@
 								<div id="sec-2-1-ship_op" class="sec-2-1-formdiv sec-2-1-city-ship_op">
 									<div class="label_container"><label for="ship_op">shipping options</label></div>
 									<select name="ship_op" id="ship_op" class="required">
-										<option value="default">select</option>
+										<option value="0.00">select</option>
 										<option value="30">$30.00 - overnight</option>
 										<option value="20">$20.00 - 2 day express</option>
 										<option value="5">$5.00 - standard shipping</option>
@@ -527,7 +527,43 @@
 			</div>
 
 			<div id="cart_contents">
-				<p>CART CONTENTS WILL BE HERE AT ALL TIMES</p>
+				<h3 align = "center">Order summary</h3>
+				<table id="Order_Summary" width="100%">
+				   <br>
+				   <col align="left">
+                   <col align="right">
+				   <tr id="Total_items_quantity">
+				   <td> Total items: </td>
+				   <td>2 </td>
+				   </tr>
+				   <tr id="Seperate">
+				   <td> </td>
+				   <td> -----------  </td>
+		  		   </tr>
+				   <tr id="Total_items_price">
+				   <td> Total items price: </td>
+				   <td>$100.00</td>
+				   </tr>
+				   <tr id="Shipping_handling_price">
+				   <td> Shipping & handling: </td>
+				   <td> $ 0.00  </td>
+				   </tr>
+				   <tr id="Seperate">
+				   <td> </td>
+				   <td> -----------  </td>
+		  		   </tr>
+				   <tr id="Before_tax_price">
+				   <td> Total before tax: </td>
+				   <td> $ 0.00  </td>
+		  		   </tr>
+				   <tr id="Tax">
+				   <td> Tax (6%): </td>
+				   <td> $ 0.00  </td>
+		  		   </tr>
+				   <tr id="Total_charge">
+				   <td> Total charge: </td>
+				   <td> $ 0.00  </td>
+		  		   </tr>
 			</div>
 
 		</div>

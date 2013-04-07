@@ -279,6 +279,18 @@ $(document).ready(function() {
 		});
 		checkSteps();
 	});
-
+	/* this function updates cart contents based on shipping options */
+    $("select[name=ship_op]").change(function() {
+			var BeforeTaxPrice = 0;
+			var Tax = 0;
+			var TotalCharge = 0;
+			$("#Order_Summary #Shipping_handling_price td:eq(1)").text('$ '+ $("#ship_op option:selected").val());
+			BeforeTaxPrice = parseFloat($("#ship_op option:selected").val()) + 100.00;
+			Tax = BeforeTaxPrice * 0.06;
+			TotalCharge = BeforeTaxPrice + Tax;
+			$("#Order_Summary #Before_tax_price td:eq(1)").text('$ '+ String(BeforeTaxPrice.toFixed(2)));
+			$("#Order_Summary #Tax td:eq(1)").text('$ '+ String(Tax.toFixed(2)));
+			$("#Order_Summary #Total_charge td:eq(1)").text('$ '+ String(TotalCharge.toFixed(2)));
+	});
 });	
 
