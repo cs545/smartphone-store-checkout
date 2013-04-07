@@ -300,12 +300,12 @@
 								<div id="sec-3-1-cc_payment_info" class="sec-3-1-formdiv">
 									<div id="sec-3-1-cc_number" class="sec-3-1-formdiv">
 										<div class="label_container"><label for="cc_number">credit card number</label></div>
-										<input type="text" name="cc_number" id="cc_number" placeholder="" maxlength="50" />
+										<input type="text" name="cc_number" id="cc_number" placeholder="" maxlength="19" />
 									</div>
 
 									<div id="sec-3-1-cc_expiry_date" class="sec-3-1-formdiv">
 										<div class="label_container"><label for="cc_expiry_date">expiration date</label></div>
-										<input type="text" name="cc_expiry_date" id="cc_expiry_date" placeholder="" maxlength="50" />
+										<input type="text" name="cc_expiry_date" id="cc_expiry_date" placeholder="" maxlength="5" />
 									</div>
 
 									<div id="sec-3-1-cc_card_type" class="sec-3-1-formdiv">
@@ -321,19 +321,19 @@
 
 									<div id="sec-3-1-cc_csv" class="sec-3-1-formdiv">
 										<div class="label_container"><label for="cc_csv">CSV</label></div>
-										<input type="text" name="cc_csv" id="cc_csv" placeholder="" maxlength="50" />
+										<input type="text" name="cc_csv" id="cc_csv" placeholder="" maxlength="4" />
 									</div>
 								</div>
 
 								<div id="sec-3-1-dw_payment_info" class = "sec-3-1-formdiv">
 									<div id="sec-3-1-dw_account" class="sec-3-1-formdiv">
 										<div class="label_container"><label for="dw_account">account number</label></div>
-										<input type="text" name="dw_account" id="dw_account" placeholder="" maxlength="50" />
+										<input type="text" name="dw_account" id="dw_account" placeholder="" maxlength="9" />
 									</div>
 
 									<div id="sec-3-1-dw_routing" class="sec-3-1-formdiv">
 										<div class="label_container"><label for="dw_routing_no">routing number</label></div>
-										<input type="text" name="dw_routing_no" id="dw_routing_no" placeholder="" maxlength="50" />
+										<input type="text" name="dw_routing_no" id="dw_routing_no" placeholder="" maxlength="9" />
 									</div>
 
 									<div id="sec-3-1-dw_bank_phone" class="sec-3-1-formdiv">
@@ -365,11 +365,83 @@
 					<div class="next_section_number section_number" id="section_number_5">!</div>
 					<h2 class="section_title">confirm your order</h2>
 					<div id="section4-1" class="inner_section">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+						<h3>shipping</h3>
+						<button id="edit_shipping" class="edit_button">edit</button>
+						<div class="sec-4-1-line">
+							<div class="sec-4-1-details" id="sec-4-1-ship_fname"></div>
+							<div class="sec-4-1-details" id="sec-4-1-ship_lname"></div>
+						</div>
+						<div class="sec-4-1-line">
+							<div class="sec-4-1-details" id="sec-4-1-ship_addr1"></div>
+						</div>
+						<div class="sec-4-1-line">
+							<div class="sec-4-1-details" id="sec-4-1-ship_addr2"></div>
+						</div>
+						<div class="sec-4-1-line">
+							<div class="sec-4-1-details" id="sec-4-1-ship_city"></div>
+							<div class="sec-4-1-details" id="sec-4-1-ship_state"></div>
+							<div class="sec-4-1-details" id="sec-4-1-ship_zip"></div>
+						</div>
+						<div class="sec-4-1-line">
+							<div class="sec-4-1-label">phone:</div>
+							<div class="sec-4-1-details" id="sec-4-1-ship_phone"></div>
+						</div>
+						<div class="sec-4-1-line">
+							<div class="sec-4-1-label">shipping:</div>
+							<div class="sec-4-1-details" id="sec-4-1-ship_method"></div>
+						</div>
+
+						<h3>billing</h3>
+						<button id="edit_billing" class="edit_button">edit</button>
+						<div class="sec-4-1-line">
+							<div class="sec-4-1-details" id="sec-4-1-bill_fname"></div>
+							<div class="sec-4-1-details" id="sec-4-1-bill_lname"></div>
+						</div>
+						<div class="sec-4-1-line">
+							<div class="sec-4-1-details" id="sec-4-1-bill_addr1"></div>
+						</div>
+						<div class="sec-4-1-line">
+							<div class="sec-4-1-details" id="sec-4-1-bill-addr2"></div>
+						</div>
+						<div class="sec-4-1-line">
+							<div class="sec-4-1-details" id="sec-4-1-bill_city"></div>
+							<div class="sec-4-1-details" id="sec-4-1-bill_state"></div>
+							<div class="sec-4-1-details" id="sec-4-1-bill_zip"></div>
+						</div>
+						<div class="sec-4-1-line">
+							<div class="sec-4-1-label">phone:</div>
+							<div class="sec-4-1-details" id="sec-4-1-bill_phone"></div>
+						</div>
+
+						<div id="sec-4-1-credit_card">
+							<div class="sec-4-1-line">
+								<div class="sec-4-1-label">credit card:</div>
+								<div class="sec-4-1-details" id="sec-4-1-cc_type"></div>
+								<div class="sec-4-1-details" id="sec-4-1-cc_number"></div>
+							</div>
+							<div class="sec-4-1-line">
+								<div class="sec-4-1-label">expiration:</div>
+								<div class="sec-4-1-details" id="sec-4-1-cc_expiry"></div>
+							</div>
+						</div>
+
+						<div id="sec-4-1-direct_withdraw">
+							<div class="sec-4-1-line">
+								<div class="sec-4-1-label">account:</div>
+								<div class="sec-4-1-details" id="sec-4-1-dw_account"></div>
+							</div>
+							<div class="sec-4-1-line">
+								<div class="sec-4-1-label">routing:</div>
+								<div class="sec-4-1-details" id="sec-4-1-dw_routing"></div>
+							</div>
+						</div>
+
 						<div class="button_area">
 							<button class="back_step">BACK</button>
 							<button type="submit" class="next_step">PURCHASE!</button>
 						</div>
+
 					</div>
 				</div>
 
@@ -380,8 +452,76 @@
 					<div class="section_area"></div>
 					<h2 class="section_title">order complete!</h2>
 					<div id="section5-1" class="inner_section">
-						<p>!! - You're all done!!</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+						<p>Please find your confirmation details below. You will recieve an email confirmation momentarily (not really. This is just a demo, after all). Thanks for the purchase!</p>
+						<h3>shipping</h3>
+						<div class="sec-5-1-line">
+							<div class="sec-5-1-details" id="sec-5-1-ship_fname"></div>
+							<div class="sec-5-1-details" id="sec-5-1-ship_lname"></div>
+						</div>
+						<div class="sec-5-1-line">
+							<div class="sec-5-1-details" id="sec-5-1-ship_addr1"></div>
+						</div>
+						<div class="sec-5-1-line">
+							<div class="sec-5-1-details" id="sec-5-1-ship_addr2"></div>
+						</div>
+						<div class="sec-5-1-line">
+							<div class="sec-5-1-details" id="sec-5-1-ship_city"></div>
+							<div class="sec-5-1-details" id="sec-5-1-ship_state"></div>
+							<div class="sec-5-1-details" id="sec-5-1-ship_zip"></div>
+						</div>
+						<div class="sec-5-1-line">
+							<div class="sec-5-1-label">phone:</div>
+							<div class="sec-5-1-details" id="sec-5-1-ship_phone"></div>
+						</div>
+						<div class="sec-5-1-line">
+							<div class="sec-5-1-label">shipping:</div>
+							<div class="sec-5-1-details" id="sec-5-1-ship_method"></div>
+						</div>
+
+						<h3>billing</h3>
+						<div class="sec-5-1-line">
+							<div class="sec-5-1-details" id="sec-5-1-bill_fname"></div>
+							<div class="sec-5-1-details" id="sec-5-1-bill_lname"></div>
+						</div>
+						<div class="sec-5-1-line">
+							<div class="sec-5-1-details" id="sec-5-1-bill_addr1"></div>
+						</div>
+						<div class="sec-5-1-line">
+							<div class="sec-5-1-details" id="sec-5-1-bill-addr2"></div>
+						</div>
+						<div class="sec-5-1-line">
+							<div class="sec-5-1-details" id="sec-5-1-bill_city"></div>
+							<div class="sec-5-1-details" id="sec-5-1-bill_state"></div>
+							<div class="sec-5-1-details" id="sec-5-1-bill_zip"></div>
+						</div>
+						<div class="sec-5-1-line">
+							<div class="sec-5-1-label">phone:</div>
+							<div class="sec-5-1-details" id="sec-5-1-bill_phone"></div>
+						</div>
+
+						<div id="sec-5-1-credit_card">
+							<div class="sec-5-1-line">
+								<div class="sec-5-1-label">credit card:</div>
+								<div class="sec-5-1-details" id="sec-5-1-cc_type"></div>
+								<div class="sec-5-1-details" id="sec-5-1-cc_number"></div>
+							</div>
+							<div class="sec-5-1-line">
+								<div class="sec-5-1-label">expiration:</div>
+								<div class="sec-5-1-details" id="sec-5-1-cc_expiry"></div>
+							</div>
+						</div>
+
+						<div id="sec-5-1-direct_withdraw">
+							<div class="sec-5-1-line">
+								<div class="sec-5-1-label">account:</div>
+								<div class="sec-5-1-details" id="sec-5-1-dw_account"></div>
+							</div>
+							<div class="sec-5-1-line">
+								<div class="sec-5-1-label">routing:</div>
+								<div class="sec-5-1-details" id="sec-5-1-dw_routing"></div>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>

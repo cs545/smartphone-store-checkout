@@ -364,10 +364,13 @@ input {
 }
 
 #section3-1 h3 {
-	margin-top: 15px;
-	font-family: sans-serif;
-	font-weight: bold;
-	font-size: 16px;
+	width: 100%;
+	float: left;
+	margin: 18px 0 0 0;
+	font-family: Arial, sans-serif;
+	font-weight: 400;
+	color: #298b9d;
+	font-size: 22px;
 }
 
 #sec-3-1-same_address input { margin-top: 12px; }
@@ -440,6 +443,151 @@ input {
 /***** END SECTION 3 ******/
 /**************************/
 
+
+
+
+
+
+
+/**************************/
+/******** SECTION 4 *******/
+/**************************/
+
+#section_4 h3 {
+	width: auto;
+	float: left;
+	margin: 18px 0 4px 10px;
+	font-family: Arial, sans-serif;
+	font-weight: 400;
+	color: #298b9d;
+	font-size: 22px;
+}
+
+div.sec-4-1-line {
+	width: 100%;
+	float: left;
+	margin-left: 16px;
+}
+
+div.sec-4-1-details, div.sec-4-1-label {
+	float: left;
+	margin: 2px 6px 0 0;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+}
+
+div.sec-4-1-details {
+	font-weight: 300;
+	width: auto;
+}
+
+div.sec-4-1-label {
+	font-weight: bold;
+	width: 110px;
+	margin-left: 10px;
+	margin-right: 0px;
+}
+
+button.edit_button {
+	font-size: 13px;
+	font-family: Arial, sans-serif;
+	font-weight: 500;
+	margin: 18px 0 0 10px;
+	padding: 1px 2px;
+	width: auto;
+	float: left;
+	display: block;
+	        border-radius: 2px;
+	   -moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	background-color: #19a0bd;
+	background: -moz-linear-gradient(top,#19a0bd 0%,#13839b);
+	background: -webkit-gradient(linear, left top, left bottom, from(#19a0bd), to(#13839b));
+	border: 1px solid #35646d;
+	        box-shadow: inset 1px 1px 3px rgba(255,255,255,0.4);
+	   -moz-box-shadow: inset 1px 1px 3px rgba(255,255,255,0.4);
+	-webkit-box-shadow: inset 1px 1px 3px rgba(255,255,255,0.4);
+}
+
+
+button.edit_button:hover {
+	background-color: #1588a0;
+	background: -moz-linear-gradient(top,#1588a0 0%,#147387);
+	background: -webkit-gradient(linear, left top, left bottom, from(#1588a0), to(#147387));
+}
+
+button.edit_button:active {
+	        box-shadow: inset -1px -1px 3px rgba(255,255,255,0.4);
+	   -moz-box-shadow: inset -1px -1px 3px rgba(255,255,255,0.4);
+	-webkit-box-shadow: inset -1px -1px 3px rgba(255,255,255,0.4);
+}
+
+/**************************/
+/***** END SECTION 4 ******/
+/**************************/
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************/
+/******** SECTION 5 *******/
+/**************************/
+
+#section_5 h3 {
+	width: 100%;
+	float: left;
+	margin: 18px 0 4px 10px;
+	font-family: Arial, sans-serif;
+	font-weight: 400;
+	color: #298b9d;
+	font-size: 22px;
+}
+
+#section_5 p {
+	margin: 10px 10px 0 10px;
+	padding: 0;
+	float: left;
+	width: auto;
+	font-family: serif;
+	font-size: 12px;
+}
+
+div.sec-5-1-line {
+	width: 100%;
+	float: left;
+	margin-left: 16px;
+}
+
+div.sec-5-1-details, div.sec-5-1-label {
+	float: left;
+	margin: 2px 6px 0 0;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+}
+
+div.sec-5-1-details {
+	font-weight: 300;
+	width: auto;
+}
+
+div.sec-5-1-label {
+	font-weight: bold;
+	width: 110px;
+	margin-left: 10px;
+	margin-right: 0px;
+}
+
+/**************************/
+/***** END SECTION 5 ******/
+/**************************/
 
 
 

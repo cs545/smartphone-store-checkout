@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
 	var current_section = 1;
+	console.log(current_section);
 
 	$('.inner_section').hide();
 	$('.section_title').hide();
@@ -30,7 +31,6 @@ $(document).ready(function() {
 
 	/* checks to see if "use same address" is checked in section 3 */
 	function check3address(){
-		console.log("checking address");
 		if ( $(this).is(":checked") ) {
 			$(".bill_address input").attr("readonly", "readonly").addClass("pre-fill");
 			$(".bill_address select").val( $("#recv_state").val() ).attr("disabled", "disabled");
@@ -47,6 +47,117 @@ $(document).ready(function() {
 			$(".bill_address select").removeAttr("disabled").val("select");
 			$(".bill_address label.error").show();
   		}
+	}
+
+	/* sets up section 4 */
+	function setupSection4() {
+		console.log("setting up section 4");
+
+		$(".sec-4-1-details").empty();
+
+		if ( $("#trans_type_cc").is(":checked") ) {
+			$("#sec-4-1-credit_card").show();
+			$("#sec-4-1-direct_withdraw").hide();
+		} else if ( $("#trans_type_dw").is(":checked") ) {
+			$("#sec-4-1-credit_card").hide();
+			$("#sec-4-1-direct_withdraw").show();
+		}
+
+		$("#sec-4-1-ship_fname").append( $("#recv_first_name").val() );
+		$("#sec-4-1-ship_lname").append( $("#recv_last_name").val()  );
+		$("#sec-4-1-ship_addr1").append( $("#recv_address_1").val()  );
+		$("#sec-4-1-ship_addr2").append( $("#recv_address_2").val()  );
+		$("#sec-4-1-ship_city").append(  $("#recv_city").val()       );
+		$("#sec-4-1-ship_city").append(  ","                         );
+		$("#sec-4-1-ship_state").append( $("#recv_state").val()      );
+		$("#sec-4-1-ship_zip").append(   $("#recv_zip").val()        );
+		$("#sec-4-1-ship_phone").append( $("#recv_telephone").val()  );
+		if ( $("#ship_op").val()==5 ) {
+			$("#sec-4-1-ship_method").append( "standard shipping" );
+		} else if ( $("#ship_op").val()==20 ) {
+			$("#sec-4-1-ship_method").append( "2 day express" );
+		} else if ( $("#ship_op").val()==30 ) {
+			$("#sec-4-1-ship_method").append( "overnight" );
+		}
+
+		$("#sec-4-1-bill_fname").append( $("#bill_first_name").val() );
+		$("#sec-4-1-bill_lname").append( $("#bill_last_name").val()  );
+		$("#sec-4-1-bill_addr1").append( $("#bill_address_1").val()  );
+		$("#sec-4-1-bill_addr2").append( $("#bill_address_2").val()  );
+		$("#sec-4-1-bill_city").append(  $("#bill_city").val()       );
+		$("#sec-4-1-bill_city").append(  ","                         );
+		$("#sec-4-1-bill_state").append( $("#bill_state").val()      );
+		$("#sec-4-1-bill_zip").append(   $("#bill_zip").val()        );
+		$("#sec-4-1-bill_phone").append( $("#bill_telephone").val()  );
+
+		$("#sec-4-1-cc_number").append(  $("#cc_number").val()      );
+		$("#sec-4-1-cc_expiry").append(  $("#cc_expiry_date").val() );
+		$("#sec-4-1-cc_type").append(    $("#cc_card_type").val()   );
+		$("#sec-4-1-dw_account").append( $("#dw_account").val()     );
+		$("#sec-4-1-dw_routing").append( $("#dw_routing_no").val()  );
+
+	}
+
+
+	/* sets up section 5 */
+	function setupSection5() {
+		console.log("setting up section 5");
+		
+		$(".sec-5-1-details").empty();
+
+		if ( $("#trans_type_cc").is(":checked") ) {
+			$("#sec-5-1-credit_card").show();
+			$("#sec-5-1-direct_withdraw").hide();
+		} else if ( $("#trans_type_dw").is(":checked") ) {
+			$("#sec-5-1-credit_card").hide();
+			$("#sec-5-1-direct_withdraw").show();
+		}
+
+		$("#sec-5-1-ship_fname").append( $("#recv_first_name").val() );
+		$("#sec-5-1-ship_lname").append( $("#recv_last_name").val()  );
+		$("#sec-5-1-ship_addr1").append( $("#recv_address_1").val()  );
+		$("#sec-5-1-ship_addr2").append( $("#recv_address_2").val()  );
+		$("#sec-5-1-ship_city").append(  $("#recv_city").val()       );
+		$("#sec-5-1-ship_city").append(  ","                         );
+		$("#sec-5-1-ship_state").append( $("#recv_state").val()      );
+		$("#sec-5-1-ship_zip").append(   $("#recv_zip").val()        );
+		$("#sec-5-1-ship_phone").append( $("#recv_telephone").val()  );
+
+		if ( $("#ship_op").val()==5 ) {
+			$("#sec-5-1-ship_method").append( "standard shipping" );
+		} else if ( $("#ship_op").val()==20 ) {
+			$("#sec-5-1-ship_method").append( "2 day express" );
+		} else if ( $("#ship_op").val()==30 ) {
+			$("#sec-5-1-ship_method").append( "overnight" );
+		}
+
+		$("#sec-5-1-bill_fname").append( $("#bill_first_name").val() );
+		$("#sec-5-1-bill_lname").append( $("#bill_last_name").val()  );
+		$("#sec-5-1-bill_addr1").append( $("#bill_address_1").val()  );
+		$("#sec-5-1-bill_addr2").append( $("#bill_address_2").val()  );
+		$("#sec-5-1-bill_city").append(  $("#bill_city").val()       );
+		$("#sec-5-1-bill_city").append(  ","                         );
+		$("#sec-5-1-bill_state").append( $("#bill_state").val()      );
+		$("#sec-5-1-bill_zip").append(   $("#bill_zip").val()        );
+		$("#sec-5-1-bill_phone").append( $("#bill_telephone").val()  );
+
+		$("#sec-5-1-cc_number").append(  $("#cc_number").val()      );
+		$("#sec-5-1-cc_expiry").append(  $("#cc_expiry_date").val() );
+		$("#sec-5-1-cc_type").append(    $("#cc_card_type").val()   );
+		$("#sec-5-1-dw_account").append( $("#dw_account").val()     );
+		$("#sec-5-1-dw_routing").append( $("#dw_routing_no").val()  );
+
+	}
+
+	function checkSteps() {
+		if (current_section===3) {
+			check3payment();
+			check3address();
+		} else if (current_section===4) {
+			setupSection4();
+		} else if (current_section===5) {
+			setupSection5();
+		}
 	}
 
 
@@ -72,10 +183,7 @@ $(document).ready(function() {
 					$(this).children(".section_number").css({ opacity: 1.0 });
 				}).css('overflow', 'visible');
 			});
-			if (current_section===3) {
-				check3payment();
-				check3address();
-			}
+			checkSteps();
 		}
 	});
 
@@ -99,6 +207,7 @@ $(document).ready(function() {
 				$(this).children(".section_number").css({ opacity: 1.0 });
 			}).css('overflow', 'visible');
 		});
+		checkSteps();
 	});
 
 	/* this function provides backward movements */
@@ -119,11 +228,57 @@ $(document).ready(function() {
 				$(this).prev().children(".section_number").css({ opacity: 1.0 });
 			}).css('overflow', 'visible');
 		});
+		checkSteps();
 	});
 
 
 	$("#sec-3-1-payment_method input").click( check3payment );
 	$("#sec-3-1-same_address input").click( check3address );
+
+	$("button#edit_billing").click(function(){
+		current_section--;
+		console.log(current_section);
+		$(this).parent().parent(".section").toggleClass("active", 4000);
+		$(this).parent().parent(".section").prev().children(".section_number").css({ opacity: 0.5 });
+		$(this).parent(".inner_section").siblings(".section_title").fadeOut(300);
+		$(this).parent(".inner_section").fadeOut(300, function(){
+			$(this).parent(".section").css("z-index", "auto");
+			$(this).parent(".section").prev().css("z-index", "10");
+			$(this).parent(".section").prev().children(".title_area").animate({width:'490px'}, 500);
+			$(this).parent(".section").prev().animate({width:'490px'}, 500, function() {
+				$(this).toggleClass("active", 4000);
+				$(this).children(".inner_section").fadeIn(300);
+				$(this).children(".section_title").fadeIn(300);
+				$(this).prev().children(".section_number").css({ opacity: 1.0 });
+			}).css('overflow', 'visible');
+		});
+		checkSteps();
+	});
+
+	$("button#edit_shipping").click(function(){
+		current_section=current_section-2;
+		console.log(current_section);
+		$(this).parent().parent(".section").toggleClass("active", 4000);
+		$(this).parent().parent(".section").prev().children(".section_number").css({ opacity: 0.5 });
+		$(this).parent(".inner_section").siblings(".section_title").fadeOut(300);
+		$(this).parent(".inner_section").fadeOut(300, function(){
+
+			$(this).parent(".section").css("z-index", "auto");
+
+			$(this).parent(".section").prev().children(".title_area").animate({width:'490px'}, 500);
+			$(this).parent(".section").prev().animate({width:'490px'}, 500);
+
+			$(this).parent(".section").prev().prev().css("z-index", "10");
+			$(this).parent(".section").prev().prev().children(".title_area").animate({width:'490px'}, 500);
+			$(this).parent(".section").prev().prev().animate({width:'490px'}, 500, function() {
+				$(this).toggleClass("active", 4000);
+				$(this).children(".inner_section").fadeIn(300);
+				$(this).children(".section_title").fadeIn(300);
+				$(this).prev().children(".section_number").css({ opacity: 1.0 });
+			}).css('overflow', 'visible');
+		});
+		checkSteps();
+	});
 
 });	
 
