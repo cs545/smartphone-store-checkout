@@ -31,7 +31,7 @@ $(document).ready(function() {
 
 	/* checks to see if "use same address" is checked in section 3 */
 	function check3address(){
-		if ( $(this).is(":checked") ) {
+		if ( $("#same_address").is(":checked") ) {
 			$(".bill_address input").attr("readonly", "readonly").addClass("pre-fill");
 			$(".bill_address select").val( $("#recv_state").val() ).attr("disabled", "disabled");
 			$("#bill_first_name").val( $("#recv_first_name").val() );
