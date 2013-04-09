@@ -73,11 +73,11 @@ $(document).ready(function() {
 		$(".sec-4-1-details-nofloat").empty();
 
 		if ( $("#trans_type_cc").is(":checked") ) {
-			$("#sec-4-1-credit_card").show();
-			$("#sec-4-1-direct_withdraw").hide();
+			$(".sec-4-cc").show();
+			$(".sec-4-dw").hide();
 		} else if ( $("#trans_type_dw").is(":checked") ) {
-			$("#sec-4-1-credit_card").hide();
-			$("#sec-4-1-direct_withdraw").show();
+			$(".sec-4-cc").hide();
+			$(".sec-4-dw").show();
 		}
 
 		$("#sec-4-1-ship_fname").append( $("#recv_first_name").val() );
@@ -109,9 +109,8 @@ $(document).ready(function() {
 		$("#sec-4-1-bill_phone").append( $("#bill_telephone").val()  );
 		$("#sec-4-1-bill_email").append( $("#bill_email").val()      );
 
-		$("#sec-4-1-cc_number").append(  $("#cc_number").val()      );
+		$("#sec-4-1-cc_number").append(  $("#cc_card_type").val() + " " + $("#cc_number").val() );
 		$("#sec-4-1-cc_expiry").append(  $("#cc_expiry_date").val() );
-		$("#sec-4-1-cc_type").append(    $("#cc_card_type").val()   );
 		$("#sec-4-1-dw_account").append( $("#dw_account").val()     );
 		$("#sec-4-1-dw_routing").append( $("#dw_routing_no").val()  );
 
@@ -129,11 +128,11 @@ $(document).ready(function() {
 		$(".sec-5-1-details-nofloat").empty();
 
 		if ( $("#trans_type_cc").is(":checked") ) {
-			$("#sec-5-1-credit_card").show();
-			$("#sec-5-1-direct_withdraw").hide();
+			$(".sec-5-cc").show();
+			$(".sec-5-dw").hide();
 		} else if ( $("#trans_type_dw").is(":checked") ) {
-			$("#sec-5-1-credit_card").hide();
-			$("#sec-5-1-direct_withdraw").show();
+			$(".sec-5-cc").hide();
+			$(".sec-5-dw").show();
 		}
 
 		$("#sec-5-1-ship_fname").append( $("#recv_first_name").val() );
@@ -165,11 +164,11 @@ $(document).ready(function() {
 		$("#sec-5-1-bill_zip").append(   $("#bill_zip").val()        );
 		$("#sec-5-1-bill_phone").append( $("#bill_telephone").val()  );
 
-		$("#sec-5-1-cc_number").append(  $("#cc_number").val()      );
+		$("#sec-5-1-cc_number").append(  $("#cc_card_type").val() + " " + $("#cc_number").val() );
 		$("#sec-5-1-cc_expiry").append(  $("#cc_expiry_date").val() );
-		$("#sec-5-1-cc_type").append(    $("#cc_card_type").val()   );
 		$("#sec-5-1-dw_account").append( $("#dw_account").val()     );
 		$("#sec-5-1-dw_routing").append( $("#dw_routing_no").val()  );
+
 
 		$("#sec-5-1-bill_items").append( "2" );
 		$("#sec-5-1-bill_shipping").append("$" + $("#ship_op option:selected").val() + ".00");

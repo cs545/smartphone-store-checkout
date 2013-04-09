@@ -282,6 +282,11 @@ input {
 	padding: 1px 4px;
 }
 
+::-webkit-input-placeholder { color: #acacac; }
+          :-moz-placeholder { color: #acacac; }
+         ::-moz-placeholder { color: #acacac; }
+     :-ms-input-placeholder { color: #acacac; }
+
 
 /**************************/
 /****** END CHECKOUT ******/
@@ -595,7 +600,7 @@ button.edit_button:active {
 	float: left;
 	width: auto;
 	font-family: serif;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 div.sec-5-1-line {
