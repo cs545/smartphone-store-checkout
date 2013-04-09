@@ -7,6 +7,17 @@ header { background-color: #f1f1f1; }
 	margin: 0 auto;
 }
 
+#no-js-at-all-uh-oh {
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	background-color: white;
+	margin: 0 auto;
+	padding: 0;
+}
+
 p {
 	font-family: sans-serif;
 	font-size: 14px;
@@ -237,7 +248,7 @@ h2.section_title {
 }
 
 .active .section_area { background-color: white;}
-.active .title_area   { background-color: #ded6d4; border-bottom: 1px solid #9a9a9a;}
+.active .title_area   { background-color: white; border-bottom: 1px solid #9a9a9a;}
 
 .section button.next_step, .section button.next_step_submit {float:right;}
 .section button.back_step {float:left;}
@@ -361,6 +372,7 @@ input {
 #section3-1 input, .sec-3-1-formdiv, .label_container, #section3-1 h3 {
 	float: left;
 	width: 100%;
+	display: inline;
 }
 
 #section3-1 h3 {
@@ -381,6 +393,15 @@ input {
 	width: auto;
 }
 
+/* this is a fix for a strange bug appearing in firefox */
+#sec-3-line-fix {
+	float: left;
+	display: inline;
+	width: 100%;
+	height: 47px;
+}
+
+
 #sec-3-1-same_address label, #sec-3-1-same_address input       { width: auto;  }
 #sec-3-1-fname, #sec-3-1-lname                                 { width: 230px; }
 #sec-3-1-fname input, #sec-3-1-lname input                     { width: 190px; }
@@ -389,10 +410,13 @@ input {
 #sec-3-1-city input                                            { width: 140px; }
 #sec-3-1-state                                                 { width: 105px; }
 #sec-3-1-state select                                          { width: 75px;  }
-#sec-3-1-zip                                                   { width: 180px; }
+#sec-3-1-zip                                                   { width: 185px; }
 #sec-3-1-zip input                                             { width: 80px;  }
-#sec-3-1-phone input                                           { width: 120px; }                  
-#sec-3-1-ship_op select                                        { width: auto;  }
+#sec-3-1-phone                                                 { width: 150px; }
+#sec-3-1-phone input                                           { width: 110px; }
+#sec-3-1-email                                                 { width: 240px; }
+#sec-3-1-email input                                           { width: 200px; }
+
 
 #sec-3-1-payment_method div.label_container                    { width: auto;  }
 #sec-3-1-payment_method label, #sec-3-1-payment_method input   { width: auto;  }
@@ -400,9 +424,9 @@ input {
 #sec-3-1-cc_number input                                       { width: 205px; }
 #sec-3-1-cc_expiry_date                                        { width: 150px; }
 #sec-3-1-cc_expiry_date  input                                 { width: 80px;  }
-#sec-3-1-cc_card_type                                          { width: 160px; }
-#sec-3-1-cc_card_type select                                   { width: 120px; }
-#sec-3-1-cc_csv                                                { width: 300px; }
+#sec-3-1-cc_card_type                                          { width: 200px; }
+#sec-3-1-cc_card_type select                                   { width: 160px; }
+#sec-3-1-cc_csv                                                { width: 250px; }
 #sec-3-1-cc_csv  input                                         { width: 80px;  }
 #sec-3-1-dw_account, #sec-3-1-dw_routing                       { width: 200px; }
 #sec-3-1-dw_account input, #sec-3-1-dw_routing input           { width: 160px; }
@@ -411,13 +435,6 @@ input {
 
 #sec-3-1-payment_method input { margin: 12px 10px 0 10px; }
 #sec-3-1-payment_method label#trans_type_dw_label {padding-left: 50px;}
-
-
-#sec-3-1-cc_expiry_date,
-#sec-3-1-cc_csv,
-#sec-3-1-dw_routing {
-	/*padding-left: 20px;*/
-}
 
 #section3-1 input.pre-fill {
 	background-color: #9b9b9b;
@@ -469,24 +486,45 @@ div.sec-4-1-line {
 	margin-left: 16px;
 }
 
-div.sec-4-1-details, div.sec-4-1-label {
+div.sec-4-info {
+	float: left;
+	display: block;
+	width: auto;
+	margin: 0 auto;
+	margin-right: 10px;
+}
+
+div.sec-4-1-details {
 	float: left;
 	margin: 2px 6px 0 0;
 	font-family: Arial, sans-serif;
 	font-size: 12px;
-}
-
-div.sec-4-1-details {
 	font-weight: 300;
 	width: auto;
 }
 
 div.sec-4-1-label {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	width: auto;
+	margin: 2px 0 0 0;
 	font-weight: bold;
-	width: 110px;
-	margin-left: 10px;
-	margin-right: 0px;
 }
+
+div#sec-4-cart_items, div#sec-4-1-bill_items {
+	margin-bottom: 12px;
+}
+
+
+div.sec-4-1-details-nofloat {
+	font-weight: 300;
+	width: auto;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: 300;
+	margin: 2px 0 0 0;
+}
+
 
 button.edit_button {
 	font-size: 13px;
@@ -566,23 +604,43 @@ div.sec-5-1-line {
 	margin-left: 16px;
 }
 
-div.sec-5-1-details, div.sec-5-1-label {
+div.sec-5-info {
+	float: left;
+	display: block;
+	width: auto;
+	margin: 0 auto;
+	margin-right: 10px;
+}
+
+div.sec-5-1-details {
 	float: left;
 	margin: 2px 6px 0 0;
 	font-family: Arial, sans-serif;
 	font-size: 12px;
-}
-
-div.sec-5-1-details {
 	font-weight: 300;
 	width: auto;
 }
 
 div.sec-5-1-label {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	width: auto;
+	margin: 2px 0 0 0;
 	font-weight: bold;
-	width: 110px;
-	margin-left: 10px;
-	margin-right: 0px;
+}
+
+
+div.sec-5-1-details-nofloat {
+	font-weight: 300;
+	width: auto;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: 300;
+	margin: 2px 0 0 0;
+}
+
+div#sec-5-cart_items, div#sec-5-1-bill_items {
+	margin-bottom: 12px;
 }
 
 /**************************/
@@ -594,13 +652,125 @@ div.sec-5-1-label {
 
 
 
+
+
+
+/**************************/
+/********** CART **********/
+/**************************/
+
 div#cart_contents {
 	float: right;
 	border: 1px solid #cccccc;
 	width: 270px;
-	height: 600px;
+	height: auto;
 	margin: 10px 0;
+	background-color: white;
+	border-radius: 5px;
+
 }
+
+#cart_contents h3 {
+	width: 100%;
+	float: left;
+	padding: 20px 0 15px 0;
+	font-family: Arial, sans-serif;
+	font-weight: 400;
+	color: #298b9d;
+	font-size: 30px;
+	text-align: center;
+	position: relative;
+	border-bottom: 1px solid #cccccc;
+}
+
+div.cart_item {
+	width: 100%;
+	display: block;
+	float: left;
+	position: relative;
+}
+
+#cart-first {
+	margin-top: 20px;
+}
+
+#cart_contents img {
+	float: left;
+	width: 100px;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+div.item_details {
+	float: left;
+	width: 170px;
+	position: relative;
+}
+
+.item_details p {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 auto;
+	padding: 0 0 0 5px;
+}
+
+div.cart-section {
+	width: 100%;
+	display: block;
+	float: left;
+	position: relative;
+	margin-top: 10px;
+	padding-top: 15px;
+	margin-bottom:20px;
+	border-top: 1px solid #cccccc;
+}
+
+.cart-summary {
+	float: left;
+	position: relative;
+	font-family: Arial, sans-serif;
+	font-size: 15px;
+	margin-left: 10px;
+}
+
+#cart-summary-right {
+	float: right;
+	text-align: right;
+	margin: 0 15px 0 15px;
+}
+
+#cart-summary-left {
+	font-weight: bold;
+}
+
+.cart-extra-space {
+	margin-top: 20px;
+}
+
+#cart-total-label {
+	font-family: Arial, sans-serif;
+	font-weight: 400;
+	color: #298b9d;
+	font-size: 22px;
+	text-align: left;
+}
+
+#cart-total {
+	font-size: 18px;
+}
+
+
+
+
+/**************************/
+/********* END CART *******/
+/**************************/
+
+
+
+
+
 
 #section_2 #section2-1 label.error, #section_3 #section3-1 label.error {
 	font-size:10px;

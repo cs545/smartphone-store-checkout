@@ -1,7 +1,9 @@
 $(document).ready(function() {
 
 	var current_section = 1;
-	console.log(current_section);
+	var BeforeTaxPrice = 0;
+	var Tax = 0;
+	var TotalCharge = 0;
 
 	$('.inner_section').hide();
 	$('.section_title').hide();
@@ -10,6 +12,21 @@ $(document).ready(function() {
 	$('#section_number_1').css({ opacity: 1.0 });
 	$('#section_1 .inner_section').show();
 	$('#section_1 .section_title').show();
+
+	$("#no-js-at-all-uh-oh").hide().css("z-index", "-9999");
+
+	function updatePricing() {
+		if ( $("#ship_op option:selected").val()==0 ) {
+			$("#cart-shipping").text("$0.00");
+		} else {
+			$("#cart-shipping").text('$'+ $("#ship_op option:selected").val() + ".00");
+		}
+		BeforeTaxPrice = parseFloat($("#ship_op option:selected").val()) + 609.99;
+		Tax = BeforeTaxPrice * 0.07;
+		TotalCharge = BeforeTaxPrice + Tax;
+		$("#cart-tax").text('$' + String(Tax.toFixed(2)));
+		$("#cart-total").text('$'+ String(TotalCharge.toFixed(2)));
+	}
 
 	/*checks which payment section should be active in section 3 */
 	function check3payment(){
@@ -32,8 +49,8 @@ $(document).ready(function() {
 	/* checks to see if "use same address" is checked in section 3 */
 	function check3address(){
 		if ( $("#same_address").is(":checked") ) {
-			$(".bill_address input").attr("readonly", "readonly").addClass("pre-fill");
-			$(".bill_address select").val( $("#recv_state").val() ).attr("disabled", "disabled");
+			$("input.bill_address").attr("readonly", "readonly").addClass("pre-fill");
+			$("select.bill_address").val( $("#recv_state").val() ).attr("disabled", "disabled");
 			$("#bill_first_name").val( $("#recv_first_name").val() );
 			$("#bill_last_name").val( $("#recv_last_name").val() );
 			$("#bill_address_1").val( $("#recv_address_1").val() );
@@ -43,17 +60,17 @@ $(document).ready(function() {
 			$("#bill_telephone").val( $("#recv_telephone").val() );
 			$(".bill_address label.error").hide();
   		} else {
-			$(".bill_address input").attr("readonly", "").removeClass("pre-fill").val("");
-			$(".bill_address select").removeAttr("disabled").val("select");
+			$("input.bill_address").attr("readonly", "").removeClass("pre-fill").val("");
+			$("select.bill_address").removeAttr("disabled").val("select");
 			$(".bill_address label.error").show();
   		}
 	}
 
 	/* sets up section 4 */
 	function setupSection4() {
-		console.log("setting up section 4");
 
 		$(".sec-4-1-details").empty();
+		$(".sec-4-1-details-nofloat").empty();
 
 		if ( $("#trans_type_cc").is(":checked") ) {
 			$("#sec-4-1-credit_card").show();
@@ -72,6 +89,7 @@ $(document).ready(function() {
 		$("#sec-4-1-ship_state").append( $("#recv_state").val()      );
 		$("#sec-4-1-ship_zip").append(   $("#recv_zip").val()        );
 		$("#sec-4-1-ship_phone").append( $("#recv_telephone").val()  );
+
 		if ( $("#ship_op").val()==5 ) {
 			$("#sec-4-1-ship_method").append( "standard shipping" );
 		} else if ( $("#ship_op").val()==20 ) {
@@ -89,6 +107,7 @@ $(document).ready(function() {
 		$("#sec-4-1-bill_state").append( $("#bill_state").val()      );
 		$("#sec-4-1-bill_zip").append(   $("#bill_zip").val()        );
 		$("#sec-4-1-bill_phone").append( $("#bill_telephone").val()  );
+		$("#sec-4-1-bill_email").append( $("#bill_email").val()      );
 
 		$("#sec-4-1-cc_number").append(  $("#cc_number").val()      );
 		$("#sec-4-1-cc_expiry").append(  $("#cc_expiry_date").val() );
@@ -96,14 +115,18 @@ $(document).ready(function() {
 		$("#sec-4-1-dw_account").append( $("#dw_account").val()     );
 		$("#sec-4-1-dw_routing").append( $("#dw_routing_no").val()  );
 
+		$("#sec-4-1-bill_items").append( "2" );
+		$("#sec-4-1-bill_shipping").append("$" + $("#ship_op option:selected").val() + ".00");
+		$("#sec-4-1-bill_total").append( "$" + String(TotalCharge.toFixed(2)) );
+
 	}
 
 
 	/* sets up section 5 */
 	function setupSection5() {
-		console.log("setting up section 5");
 		
 		$(".sec-5-1-details").empty();
+		$(".sec-5-1-details-nofloat").empty();
 
 		if ( $("#trans_type_cc").is(":checked") ) {
 			$("#sec-5-1-credit_card").show();
@@ -122,6 +145,7 @@ $(document).ready(function() {
 		$("#sec-5-1-ship_state").append( $("#recv_state").val()      );
 		$("#sec-5-1-ship_zip").append(   $("#recv_zip").val()        );
 		$("#sec-5-1-ship_phone").append( $("#recv_telephone").val()  );
+		$("#sec-5-1-bill_email").append( $("#bill_email").val()      );
 
 		if ( $("#ship_op").val()==5 ) {
 			$("#sec-5-1-ship_method").append( "standard shipping" );
@@ -147,6 +171,10 @@ $(document).ready(function() {
 		$("#sec-5-1-dw_account").append( $("#dw_account").val()     );
 		$("#sec-5-1-dw_routing").append( $("#dw_routing_no").val()  );
 
+		$("#sec-5-1-bill_items").append( "2" );
+		$("#sec-5-1-bill_shipping").append("$" + $("#ship_op option:selected").val() + ".00");
+		$("#sec-5-1-bill_total").append( "$" + String(TotalCharge.toFixed(2)) );
+
 	}
 
 	function checkSteps() {
@@ -160,6 +188,8 @@ $(document).ready(function() {
 		}
 	}
 
+	/* functions to run on load */
+	updatePricing();
 
 
 	/*this function is for all form submissions*/
@@ -167,7 +197,6 @@ $(document).ready(function() {
 		event.preventDefault();
 		if ( $(this).validate().form() ) {
 			current_section++;
-			console.log(current_section);
 			$(this).parent().parent(".section").toggleClass("active", 4000);
 			$(this).parent().parent(".section").prev().children(".section_number").css({ opacity: 0.5 });
 			$(this).parent(".inner_section").siblings(".section_title").fadeOut(300);
@@ -184,6 +213,7 @@ $(document).ready(function() {
 				}).css('overflow', 'visible');
 			});
 			checkSteps();
+			updatePricing();
 		}
 	});
 
@@ -191,7 +221,6 @@ $(document).ready(function() {
 	/* this function is for buttons that continue, but do not involve submitting a form */
 	$("button.next_step").click(function(){
 		current_section++;
-		console.log(current_section);
 		$(this).parent().parent().parent(".section").toggleClass("active", 4000);
 		$(this).parent().parent().parent(".section").prev().children(".section_number").css({ opacity: 0.5 });
 		$(this).parent().parent(".inner_section").siblings(".section_title").fadeOut(300);
@@ -208,12 +237,12 @@ $(document).ready(function() {
 			}).css('overflow', 'visible');
 		});
 		checkSteps();
+		updatePricing();
 	});
 
 	/* this function provides backward movements */
 	$("button.back_step").click(function(){
 		current_section--;
-		console.log(current_section);
 		$(this).parent().parent().parent(".section").toggleClass("active", 4000);
 		$(this).parent().parent().parent(".section").prev().children(".section_number").css({ opacity: 0.5 });
 		$(this).parent().parent(".inner_section").siblings(".section_title").fadeOut(300);
@@ -229,6 +258,7 @@ $(document).ready(function() {
 			}).css('overflow', 'visible');
 		});
 		checkSteps();
+		updatePricing();
 	});
 
 
@@ -237,7 +267,6 @@ $(document).ready(function() {
 
 	$("button#edit_billing").click(function(){
 		current_section--;
-		console.log(current_section);
 		$(this).parent().parent(".section").toggleClass("active", 4000);
 		$(this).parent().parent(".section").prev().children(".section_number").css({ opacity: 0.5 });
 		$(this).parent(".inner_section").siblings(".section_title").fadeOut(300);
@@ -253,11 +282,11 @@ $(document).ready(function() {
 			}).css('overflow', 'visible');
 		});
 		checkSteps();
+		updatePricing();
 	});
 
 	$("button#edit_shipping").click(function(){
 		current_section=current_section-2;
-		console.log(current_section);
 		$(this).parent().parent(".section").toggleClass("active", 4000);
 		$(this).parent().parent(".section").prev().children(".section_number").css({ opacity: 0.5 });
 		$(this).parent(".inner_section").siblings(".section_title").fadeOut(300);
@@ -278,19 +307,21 @@ $(document).ready(function() {
 			}).css('overflow', 'visible');
 		});
 		checkSteps();
+		updatePricing();
 	});
+
+
+	$("button#sign-in-button").click(function(){
+		alert("Sorry, this is just a demo. No sign-in functionality yet!");
+		console.log("pressed!");
+	});
+
+
 	/* this function updates cart contents based on shipping options */
     $("select[name=ship_op]").change(function() {
-			var BeforeTaxPrice = 0;
-			var Tax = 0;
-			var TotalCharge = 0;
-			$("#Order_Summary #Shipping_handling_price td:eq(1)").text('$ '+ $("#ship_op option:selected").val());
-			BeforeTaxPrice = parseFloat($("#ship_op option:selected").val()) + 100.00;
-			Tax = BeforeTaxPrice * 0.06;
-			TotalCharge = BeforeTaxPrice + Tax;
-			$("#Order_Summary #Before_tax_price td:eq(1)").text('$ '+ String(BeforeTaxPrice.toFixed(2)));
-			$("#Order_Summary #Tax td:eq(1)").text('$ '+ String(Tax.toFixed(2)));
-			$("#Order_Summary #Total_charge td:eq(1)").text('$ '+ String(TotalCharge.toFixed(2)));
+    	updatePricing();
 	});
+
+
 });	
 

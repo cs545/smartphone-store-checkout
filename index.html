@@ -15,6 +15,11 @@
 	</head>
 
 	<body>
+
+		<div id="no-js-at-all-uh-oh">
+			<p>Uh-oh!! It looks like you don't have JavaScript enabled or you're using an older browser. We recommend you use the most recent stable version of Chrome or Firefox to run the demo. Thanks!</p>
+		</div>
+
 		<header>
 			<div id="head_wrap">
 				<div id="header_left">
@@ -24,6 +29,7 @@
 				<h2>WHERE PEOPLE GO TO, WELL, YOU KNOW... BUY STUFF.</h2>
 			</div>
 		</header>
+
 		<div id="wrap">
 			<div id="checkout_steps">
 
@@ -44,7 +50,7 @@
 						<h3>New user?</h3>
 						<div class="button_area"><button class="next_step">CHECKOUT</button></div>
 						<h3>Returning user?</h3>
-						<div class="button_area"><button>SIGN IN</button></div>
+						<div class="button_area"><button id="sign-in-button">SIGN IN</button></div>
 					</div>
 				</div>
 
@@ -184,107 +190,112 @@
 						<form id="billing_form" class="form_submit" name="billing" action="">
 							<fieldset>
 
-								<div id="sec-3-1-same_address" class="sec-3-1-formdiv">
+								<div id="sec-3-1-same_address" class="sec-3-1-formdiv bill_address">
 									<label for="same_address">same as shipping address?</label>
 									<input type="checkbox" id="same_address" name="same_address" />
 								</div>
 
+								<div id="sec-3-1-fname" class="sec-3-1-formdiv bill_address">
+									<div class="label_container"><label for="bill_first_name">first name</label></div>
+									<input type="text" name="bill_first_name" id="bill_first_name" class="bill_address" placeholder="" required="required" maxlength="50" />
+								</div>
 
-								<div class="bill_address">
-									<div id="sec-3-1-fname" class="sec-3-1-formdiv">
-										<div class="label_container"><label for="bill_first_name">first name</label></div>
-										<input type="text" name="bill_first_name" id="bill_first_name" placeholder="" required="required" maxlength="50" />
-									</div>
+								<div id="sec-3-1-lname" class="sec-3-1-formdiv bill_address">
+									<div class="label_container"><label for="bill_last_name">last name</label></div>
+									<input type="text" name="bill_last_name" id="bill_last_name" class="bill_address" placeholder="" required="required" maxlength="50" />
+								</div>
 
-									<div id="sec-3-1-lname" class="sec-3-1-formdiv">
-										<div class="label_container"><label for="bill_last_name">last name</label></div>
-										<input type="text" name="bill_last_name" id="bill_last_name" placeholder="" required="required" maxlength="50" />
-									</div>
+								<div id="sec-3-1-add1" class="sec-3-1-formdiv bill_address">
+									<div class="label_container"><label for="bill_address_1">address line 1</label></div>
+									<input type="text" name="bill_address_1" id="bill_address_1" class="bill_address" placeholder="" required="required" maxlength="50" />
+								</div>
 
-									<div id="sec-3-1-add1" class="sec-3-1-formdiv">
-										<div class="label_container"><label for="bill_address_1">address line 1</label></div>
-										<input type="text" name="bill_address_1" id="bill_address_1" placeholder="" required="required" maxlength="50" />
-									</div>
+								<div id="sec-3-1-add2" class="sec-3-1-formdiv bill_address">
+									<div class="label_container"><label for="bill_address_2">address line 2 (optional)</label></div>
+									<input type="text" name="bill_address_2"id="bill_address_2" class="bill_address" placeholder="" maxlength="50" />
+								</div>
 
-									<div id="sec-3-1-add2" class="sec-3-1-formdiv">
-										<div class="label_container"><label for="bill_address_2">address line 2 (optional)</label></div>
-										<input type="text" name="bill_address_2"id="bill_address_2" placeholder="" maxlength="50" />
-									</div>
+								<div id="sec-3-1-city" class="sec-3-1-formdiv sec-3-1-city-state bill_address">
+									<div class="label_container"><label for="bill_city">city</label></div>
+									<input type="text" name="bill_city"  id="bill_city" class="bill_address" placeholder="" required="required" maxlength="50" />
+								</div>
 
-									<div id="sec-3-1-city" class="sec-3-1-formdiv sec-3-1-city-state">
-										<div class="label_container"><label for="bill_city">city</label></div>
-										<input type="text" name="bill_city"  id="bill_city"placeholder="" required="required" maxlength="50" />
-									</div>
+								<div id="sec-3-1-state" class="sec-3-1-formdiv sec-3-1-city-state bill_address">
+									<div class="label_container"><label for="bill_state">state</label></div>
+									<select name="bill_state" id="bill_state" class="required bill_address">
+										<option value="default">select</option>
+										<option value="AL">AL</option>
+										<option value="AK">AK</option>
+										<option value="AR">AR</option>
+										<option value="AZ">AZ</option>
+										<option value="CA">CA</option>
+										<option value="CO">CO</option>
+										<option value="CT">CT</option>
+										<option value="DC">DC</option>
+										<option value="DE">DE</option>
+										<option value="FL">FL</option>
+										<option value="GA">GA</option>
+										<option value="HI">HI</option>
+										<option value="IA">IA</option>
+										<option value="ID">ID</option>
+										<option value="IL">IL</option>
+										<option value="IN">IN</option>
+										<option value="KS">KS</option>
+										<option value="KY">KY</option>
+										<option value="LA">LA</option>
+										<option value="MA">MA</option>
+										<option value="MD">MD</option>
+										<option value="ME">ME</option>
+										<option value="MH">MH</option>
+										<option value="MI">MI</option>
+										<option value="MN">MN</option>
+										<option value="MO">MO</option>
+										<option value="MS">MS</option>
+										<option value="MT">MT</option>
+										<option value="NC">NC</option>
+										<option value="ND">ND</option>
+										<option value="NE">NE</option>
+										<option value="NH">NH</option>
+										<option value="NJ">NJ</option>
+										<option value="NM">NM</option>
+										<option value="NV">NV</option>
+										<option value="NY">NY</option>
+										<option value="OH">OH</option>
+										<option value="OK">OK</option>
+										<option value="OR">OR</option>
+										<option value="PA">PA</option>
+										<option value="RI">RI</option>
+										<option value="SC">SC</option>
+										<option value="SD">SD</option>
+										<option value="TN">TN</option>
+										<option value="TX">TX</option>
+										<option value="UT">UT</option>
+										<option value="VA">VA</option>
+										<option value="VT">VT</option>
+										<option value="WA">WA</option>
+										<option value="WI">WI</option>
+										<option value="WV">WV</option>
+										<option value="WY">WY</option>
+									</select>
+								</div>
 
-									<div id="sec-3-1-state" class="sec-3-1-formdiv sec-3-1-city-state">
-										<div class="label_container"><label for="bill_state">state</label></div>
-										<select name="bill_state" id="bill_state" class="required">
-											<option value="default">select</option>
-											<option value="AL">AL</option>
-											<option value="AK">AK</option>
-											<option value="AR">AR</option>
-											<option value="AZ">AZ</option>
-											<option value="CA">CA</option>
-											<option value="CO">CO</option>
-											<option value="CT">CT</option>
-											<option value="DC">DC</option>
-											<option value="DE">DE</option>
-											<option value="FL">FL</option>
-											<option value="GA">GA</option>
-											<option value="HI">HI</option>
-											<option value="IA">IA</option>
-											<option value="ID">ID</option>
-											<option value="IL">IL</option>
-											<option value="IN">IN</option>
-											<option value="KS">KS</option>
-											<option value="KY">KY</option>
-											<option value="LA">LA</option>
-											<option value="MA">MA</option>
-											<option value="MD">MD</option>
-											<option value="ME">ME</option>
-											<option value="MH">MH</option>
-											<option value="MI">MI</option>
-											<option value="MN">MN</option>
-											<option value="MO">MO</option>
-											<option value="MS">MS</option>
-											<option value="MT">MT</option>
-											<option value="NC">NC</option>
-											<option value="ND">ND</option>
-											<option value="NE">NE</option>
-											<option value="NH">NH</option>
-											<option value="NJ">NJ</option>
-											<option value="NM">NM</option>
-											<option value="NV">NV</option>
-											<option value="NY">NY</option>
-											<option value="OH">OH</option>
-											<option value="OK">OK</option>
-											<option value="OR">OR</option>
-											<option value="PA">PA</option>
-											<option value="RI">RI</option>
-											<option value="SC">SC</option>
-											<option value="SD">SD</option>
-											<option value="TN">TN</option>
-											<option value="TX">TX</option>
-											<option value="UT">UT</option>
-											<option value="VA">VA</option>
-											<option value="VT">VT</option>
-											<option value="WA">WA</option>
-											<option value="WI">WI</option>
-											<option value="WV">WV</option>
-											<option value="WY">WY</option>
-										</select>
-									</div>
+								<div id="sec-3-1-zip" class="sec-3-1-formdiv sec-3-1-city-state bill_address">
+									<div class="label_container"><label for="bill_zip">zip code</label></div>
+									<input type="text" name="bill_zip" id="bill_zip" class="bill_address" placeholder="" required="required" maxlength="50" />
+								</div>
 
-									<div id="sec-3-1-zip" class="sec-3-1-formdiv sec-3-1-city-state">
-										<div class="label_container"><label for="bill_zip">zip code</label></div>
-										<input type="text" name="bill_zip" id="bill_zip" placeholder="" required="required" maxlength="50" />
-									</div>
-
-									<div id="sec-3-1-phone" class="sec-3-1-formdiv">
+								<div id="sec-3-line-fix">
+									<div id="sec-3-1-phone" class="sec-3-1-formdiv bill_address">
 										<div class="label_container"><label for="bill_telephone">telephone</label></div>
-										<input type="text" name="bill_telephone" id="bill_telephone" placeholder="" required="required" maxlength="50" />
+										<input type="text" name="bill_telephone" id="bill_telephone" class="bill_address" placeholder="" required="required" maxlength="50" />
+									</div>
+
+									<div id="sec-3-1-email" class="sec-3-1-formdiv">
+										<div class="label_container"><label for="bill_email">email</label></div>
+										<input type="text" name="bill_email" id="bill_email" placeholder="" required="required" maxlength="50" />
 									</div>
 								</div>
+								
 
 								<h3>Payment method</h3>
 
@@ -383,14 +394,19 @@
 							<div class="sec-4-1-details" id="sec-4-1-ship_state"></div>
 							<div class="sec-4-1-details" id="sec-4-1-ship_zip"></div>
 						</div>
+
+
 						<div class="sec-4-1-line">
-							<div class="sec-4-1-label">phone:</div>
-							<div class="sec-4-1-details" id="sec-4-1-ship_phone"></div>
+							<div class="sec-4-info">
+								<div class="sec-4-1-label">phone:</div>
+								<div class="sec-4-1-label">shipping:</div>
+							</div>
+							<div class="sec-4-info">
+								<div class="sec-4-1-details-nofloat" id="sec-4-1-ship_phone"></div>
+								<div class="sec-4-1-details-nofloat" id="sec-4-1-ship_method"></div>
+							</div>
 						</div>
-						<div class="sec-4-1-line">
-							<div class="sec-4-1-label">shipping:</div>
-							<div class="sec-4-1-details" id="sec-4-1-ship_method"></div>
-						</div>
+
 
 						<h3>billing</h3>
 						<button id="edit_billing" class="edit_button">edit</button>
@@ -409,33 +425,37 @@
 							<div class="sec-4-1-details" id="sec-4-1-bill_state"></div>
 							<div class="sec-4-1-details" id="sec-4-1-bill_zip"></div>
 						</div>
+
 						<div class="sec-4-1-line">
-							<div class="sec-4-1-label">phone:</div>
-							<div class="sec-4-1-details" id="sec-4-1-bill_phone"></div>
-						</div>
-
-						<div id="sec-4-1-credit_card">
-							<div class="sec-4-1-line">
+							<div class="sec-4-info">
+								<div class="sec-4-1-label">phone:</div>
+								<div class="sec-4-1-label">email:</div>
 								<div class="sec-4-1-label">credit card:</div>
-								<div class="sec-4-1-details" id="sec-4-1-cc_type"></div>
-								<div class="sec-4-1-details" id="sec-4-1-cc_number"></div>
-							</div>
-							<div class="sec-4-1-line">
 								<div class="sec-4-1-label">expiration:</div>
-								<div class="sec-4-1-details" id="sec-4-1-cc_expiry"></div>
+							</div>
+							<div class="sec-4-info">
+								<div class="sec-4-1-details-nofloat" id="sec-4-1-bill_phone"></div>
+								<div class="sec-4-1-details-nofloat" id="sec-4-1-bill_email"></div>
+								<div class="sec-4-1-details-nofloat" id="sec-4-1-cc_number"></div>
+								<div class="sec-4-1-details-nofloat" id="sec-4-1-cc_expiry"></div>
 							</div>
 						</div>
 
-						<div id="sec-4-1-direct_withdraw">
-							<div class="sec-4-1-line">
-								<div class="sec-4-1-label">account:</div>
-								<div class="sec-4-1-details" id="sec-4-1-dw_account"></div>
+
+						<h3>order summary</h3>
+						<div class="sec-4-1-line">
+							<div class="sec-4-info">
+								<div class="sec-4-1-label" id="sec-4-cart_items">items in cart:</div>
+								<div class="sec-4-1-label">shipping &amp; handling:</div>
+								<div class="sec-4-1-label">total cost:</div>
 							</div>
-							<div class="sec-4-1-line">
-								<div class="sec-4-1-label">routing:</div>
-								<div class="sec-4-1-details" id="sec-4-1-dw_routing"></div>
+							<div class="sec-4-info">
+								<div class="sec-4-1-details-nofloat" id="sec-4-1-bill_items">2</div>
+								<div class="sec-4-1-details-nofloat" id="sec-4-1-bill_shipping"></div>
+								<div class="sec-4-1-details-nofloat" id="sec-4-1-bill_total"></div>
 							</div>
 						</div>
+
 
 						<div class="button_area">
 							<button class="back_step">BACK</button>
@@ -452,7 +472,7 @@
 					<div class="section_area"></div>
 					<h2 class="section_title">order complete!</h2>
 					<div id="section5-1" class="inner_section">
-						<p>Please find your confirmation details below. You will recieve an email confirmation momentarily (not really. This is just a demo, after all). Thanks for the purchase!</p>
+						<p>Please find your confirmation details below. You will recieve an email confirmation momentarily (Not really. This is just a demo, after all). Thanks for the purchase!</p>
 						<h3>shipping</h3>
 						<div class="sec-5-1-line">
 							<div class="sec-5-1-details" id="sec-5-1-ship_fname"></div>
@@ -469,14 +489,20 @@
 							<div class="sec-5-1-details" id="sec-5-1-ship_state"></div>
 							<div class="sec-5-1-details" id="sec-5-1-ship_zip"></div>
 						</div>
+
+
 						<div class="sec-5-1-line">
-							<div class="sec-5-1-label">phone:</div>
-							<div class="sec-5-1-details" id="sec-5-1-ship_phone"></div>
+							<div class="sec-5-info">
+								<div class="sec-5-1-label">phone:</div>
+								<div class="sec-5-1-label">shipping:</div>
+							</div>
+							<div class="sec-5-info">
+								<div class="sec-5-1-details-nofloat" id="sec-5-1-ship_phone"></div>
+								<div class="sec-5-1-details-nofloat" id="sec-5-1-ship_method"></div>
+							</div>
 						</div>
-						<div class="sec-5-1-line">
-							<div class="sec-5-1-label">shipping:</div>
-							<div class="sec-5-1-details" id="sec-5-1-ship_method"></div>
-						</div>
+
+
 
 						<h3>billing</h3>
 						<div class="sec-5-1-line">
@@ -494,41 +520,100 @@
 							<div class="sec-5-1-details" id="sec-5-1-bill_state"></div>
 							<div class="sec-5-1-details" id="sec-5-1-bill_zip"></div>
 						</div>
+
 						<div class="sec-5-1-line">
-							<div class="sec-5-1-label">phone:</div>
-							<div class="sec-5-1-details" id="sec-5-1-bill_phone"></div>
-						</div>
-
-						<div id="sec-5-1-credit_card">
-							<div class="sec-5-1-line">
+							<div class="sec-5-info">
+								<div class="sec-5-1-label">phone:</div>
+								<div class="sec-5-1-label">email:</div>
 								<div class="sec-5-1-label">credit card:</div>
-								<div class="sec-5-1-details" id="sec-5-1-cc_type"></div>
-								<div class="sec-5-1-details" id="sec-5-1-cc_number"></div>
-							</div>
-							<div class="sec-5-1-line">
 								<div class="sec-5-1-label">expiration:</div>
-								<div class="sec-5-1-details" id="sec-5-1-cc_expiry"></div>
+							</div>
+							<div class="sec-5-info">
+								<div class="sec-5-1-details-nofloat" id="sec-5-1-bill_phone"></div>
+								<div class="sec-5-1-details-nofloat" id="sec-5-1-bill_email"></div>
+								<div class="sec-5-1-details-nofloat" id="sec-5-1-cc_number"></div>
+								<div class="sec-5-1-details-nofloat" id="sec-5-1-cc_expiry"></div>
 							</div>
 						</div>
 
-						<div id="sec-5-1-direct_withdraw">
-							<div class="sec-5-1-line">
-								<div class="sec-5-1-label">account:</div>
-								<div class="sec-5-1-details" id="sec-5-1-dw_account"></div>
+
+						<h3>order summary</h3>
+						<div class="sec-5-1-line">
+							<div class="sec-5-info">
+								<div class="sec-5-1-label" id="sec-5-cart_items">items in cart:</div>
+								<div class="sec-5-1-label">shipping &amp; handling:</div>
+								<div class="sec-5-1-label">total cost:</div>
 							</div>
-							<div class="sec-5-1-line">
-								<div class="sec-5-1-label">routing:</div>
-								<div class="sec-5-1-details" id="sec-5-1-dw_routing"></div>
+							<div class="sec-5-info">
+								<div class="sec-5-1-details-nofloat" id="sec-5-1-bill_items">2</div>
+								<div class="sec-5-1-details-nofloat" id="sec-5-1-bill_shipping"></div>
+								<div class="sec-5-1-details-nofloat" id="sec-5-1-bill_total"></div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>
 
+
+
+
+
 			<div id="cart_contents">
-				<h3 align = "center">Order summary</h3>
-				<table id="Order_Summary" width="100%">
+				<div class="cart-major-section">
+					<h3 align = "center">your cart</h3>
+				</div>
+
+
+				<div class="cart-major-section">
+					<div class="cart_item" id="cart-first">
+						<img src="./img/iphone_black.jpg" width="100px">
+						<div class="item_details">
+							<p>iPhone 5</p>
+							<p>iOS 6</p>
+							<p>$599.99</p>
+						</div>
+					</div>
+
+					<div class="cart_item">
+						<img src="./img/MD810.jpg" width="100px">
+						<div class="item_details">
+							<p>Apple Power Adapter</p>
+							<p>5W USB</p>
+							<p>$10.00</p>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="cart-major-section">
+					<div class="cart-section">
+						<div class="cart-summary" id="cart-summary-left">
+							<div class="cart-label">total items</div>
+							<div class="cart-label cart-extra-space">price</div>
+							<div class="cart-label">shipping &amp; handling</div>
+							<div class="cart-label">tax (7%)</div>
+							<div class="cart-label  cart-extra-space" id="cart-total-label">total</div>
+						</div>
+						<div class="cart-summary" id="cart-summary-right">
+							<div class="cart-value" id="cart-item-no">2</div>
+							<div class="cart-value cart-extra-space" id="cart-price">$609.99</div>
+							<div class="cart-value" id="cart-shipping"></div>
+							<div class="cart-value" id="cart-tax"></div>
+							<div class="cart-value  cart-extra-space" id="cart-total"></div>
+						</div>
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+
+
+				<!--<table id="Order_Summary" width="100%">
 				   <br>
 				   <col align="left">
                    <col align="right">
@@ -542,10 +627,10 @@
 		  		   </tr>
 				   <tr id="Total_items_price">
 				   <td> Total items price: </td>
-				   <td>$100.00</td>
+				   <td>$610.00</td>
 				   </tr>
 				   <tr id="Shipping_handling_price">
-				   <td> Shipping & handling: </td>
+				   <td> Shipping &amp; handling: </td>
 				   <td> $ 0.00  </td>
 				   </tr>
 				   <tr id="Seperate">
@@ -563,7 +648,7 @@
 				   <tr id="Total_charge">
 				   <td> Total charge: </td>
 				   <td> $ 0.00  </td>
-		  		   </tr>
+		  		   </tr>-->
 			</div>
 
 		</div>
