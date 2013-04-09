@@ -11,21 +11,6 @@
 		<script type="text/javascript" src="./js/validation.js"></script>
 		<script type="text/javascript" src="./js/jscript.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,800' rel='stylesheet' type='text/css'>
-		<script>
-		function checkLuhn(input)
-{
-  var sum = 0;
-  var numdigits = input.length;
-  var parity = numdigits % 2;
-  for(var i=0; i < numdigits; i++) {
-    var digit = parseInt(input.charAt(i))
-    if(i % 2 == parity) digit *= 2;
-    if(digit > 9) digit -= 9;
-    sum += digit;
-  }
-  return (sum % 10) == 0;
-}
-		</script>
 
 	</head>
 
@@ -81,17 +66,17 @@
 							<fieldset>
 								<div id="sec-2-1-fname" class="sec-2-1-formdiv">
 									<div class="label_container"><label for="recv_first_name">first name</label></div>
-									<input type="text" name="recv_first_name" id="recv_first_name" placeholder="" required maxlength="50" />
+									<input type="text" name="recv_first_name" id="recv_first_name" placeholder="" required="required" maxlength="50" />
 								</div>
 
 								<div id="sec-2-1-lname" class="sec-2-1-formdiv">
 									<div class="label_container"><label for="recv_last_name">last name</label></div>
-									<input type="text" name="recv_last_name" id="recv_last_name" placeholder="" required maxlength="50" />
+									<input type="text" name="recv_last_name" id="recv_last_name" placeholder="" required="required" maxlength="50" />
 								</div>
 
 								<div id="sec-2-1-add1" class="sec-2-1-formdiv">
 									<div class="label_container"><label for="recv_address_1">address line 1</label></div>
-									<input type="text" name="recv_address_1" id="recv_address_1" placeholder="" required maxlength="50" />
+									<input type="text" name="recv_address_1" id="recv_address_1" placeholder="" required="required" maxlength="50" />
 								</div>
 
 								<div id="sec-2-1-add2" class="sec-2-1-formdiv">
@@ -101,7 +86,7 @@
 
 								<div id="sec-2-1-city" class="sec-2-1-formdiv sec-2-1-city-state">
 									<div class="label_container"><label for="recv_city">city</label></div>
-									<input type="text" name="recv_city"  id="recv_city"placeholder="" required maxlength="50" />
+									<input type="text" name="recv_city"  id="recv_city"placeholder="" required="required" maxlength="50" />
 								</div>
 
 								<div id="sec-2-1-state" class="sec-2-1-formdiv sec-2-1-city-state">
@@ -165,12 +150,12 @@
 
 								<div id="sec-2-1-zip" class="sec-2-1-formdiv sec-2-1-city-state">
 									<div class="label_container"><label for="recv_zip">zip code</label></div>
-									<input type="text" name="recv_zip" id="recv_zip" placeholder="" required maxlength="50" />
+									<input type="text" name="recv_zip" id="recv_zip" placeholder="" required="required" maxlength="50" />
 								</div>
 
 								<div id="sec-2-1-phone" class="sec-2-1-formdiv">
 									<div class="label_container"><label for="recv_telephone">telephone</label></div>
-									<input type="text" name="recv_telephone" id="recv_telephone" placeholder="" required maxlength="50" />
+									<input type="text" name="recv_telephone" id="recv_telephone" placeholder="" required="required" maxlength="50" />
 								</div>
 
 								<div id="sec-2-1-ship_op" class="sec-2-1-formdiv sec-2-1-city-ship_op">
@@ -215,7 +200,6 @@
 									<input type="text" name="bill_first_name" id="bill_first_name" class="bill_address" placeholder="" required="required" maxlength="50" />
 								</div>
 
-<<<<<<< HEAD
 								<div id="sec-3-1-lname" class="sec-3-1-formdiv bill_address">
 									<div class="label_container"><label for="bill_last_name">last name</label></div>
 									<input type="text" name="bill_last_name" id="bill_last_name" class="bill_address" placeholder="" required="required" maxlength="50" />
@@ -230,30 +214,12 @@
 									<div class="label_container"><label for="bill_address_2">address line 2 (optional)</label></div>
 									<input type="text" name="bill_address_2"id="bill_address_2" class="bill_address" placeholder="" maxlength="50" />
 								</div>
-=======
-								<div class="bill_address">
-									<div id="sec-3-1-fname" class="sec-3-1-formdiv">
-										<div class="label_container"><label for="bill_first_name">first name</label></div>
-										<input type="text" name="bill_first_name" id="bill_first_name" placeholder="" required maxlength="50" />
-									</div>
-
-									<div id="sec-3-1-lname" class="sec-3-1-formdiv">
-										<div class="label_container"><label for="bill_last_name">last name</label></div>
-										<input type="text" name="bill_last_name" id="bill_last_name" placeholder="" required maxlength="50" />
-									</div>
-
-									<div id="sec-3-1-add1" class="sec-3-1-formdiv">
-										<div class="label_container"><label for="bill_address_1">address line 1</label></div>
-										<input type="text" name="bill_address_1" id="bill_address_1" placeholder="" required maxlength="50" />
-									</div>
->>>>>>> da21d518f9c762164a5b164b61ea4a29501c5f11
 
 								<div id="sec-3-1-city" class="sec-3-1-formdiv sec-3-1-city-state bill_address">
 									<div class="label_container"><label for="bill_city">city</label></div>
 									<input type="text" name="bill_city"  id="bill_city" class="bill_address" placeholder="" required="required" maxlength="50" />
 								</div>
 
-<<<<<<< HEAD
 								<div id="sec-3-1-state" class="sec-3-1-formdiv sec-3-1-city-state bill_address">
 									<div class="label_container"><label for="bill_state">state</label></div>
 									<select name="bill_state" id="bill_state" class="required bill_address">
@@ -312,19 +278,12 @@
 										<option value="WY">WY</option>
 									</select>
 								</div>
-=======
-									<div id="sec-3-1-city" class="sec-3-1-formdiv sec-3-1-city-state">
-										<div class="label_container"><label for="bill_city">city</label></div>
-										<input type="text" name="bill_city"  id="bill_city"placeholder="" required maxlength="50" />
-									</div>
->>>>>>> da21d518f9c762164a5b164b61ea4a29501c5f11
 
 								<div id="sec-3-1-zip" class="sec-3-1-formdiv sec-3-1-city-state bill_address">
 									<div class="label_container"><label for="bill_zip">zip code</label></div>
 									<input type="text" name="bill_zip" id="bill_zip" class="bill_address" placeholder="" required="required" maxlength="50" />
 								</div>
 
-<<<<<<< HEAD
 								<div id="sec-3-line-fix">
 									<div id="sec-3-1-phone" class="sec-3-1-formdiv bill_address">
 										<div class="label_container"><label for="bill_telephone">telephone</label></div>
@@ -334,16 +293,6 @@
 									<div id="sec-3-1-email" class="sec-3-1-formdiv">
 										<div class="label_container"><label for="bill_email">email</label></div>
 										<input type="text" name="bill_email" id="bill_email" placeholder="" required="required" maxlength="50" />
-=======
-									<div id="sec-3-1-zip" class="sec-3-1-formdiv sec-3-1-city-state">
-										<div class="label_container"><label for="bill_zip">zip code</label></div>
-										<input type="text" name="bill_zip" id="bill_zip" placeholder="" required maxlength="50" />
-									</div>
-
-									<div id="sec-3-1-phone" class="sec-3-1-formdiv">
-										<div class="label_container"><label for="bill_telephone">telephone</label></div>
-										<input type="text" name="bill_telephone" id="bill_telephone" placeholder="" required maxlength="50" />
->>>>>>> da21d518f9c762164a5b164b61ea4a29501c5f11
 									</div>
 								</div>
 								
@@ -352,16 +301,25 @@
 
 								<div id="sec-3-1-payment_method" class="sec-3-1-formdiv">
 									<div class="label_container"><label for="trans_type_cc">credit card</label></div>
-									<input type="radio" id="trans_type_cc" name="trans_type" value="credit_card" required>
+									<input type="radio" id="trans_type_cc" name="trans_type" value="credit_card" required="required">
 									
 									<div class="label_container"><label for="trans_type_dw" id="trans_type_dw_label">direct withdraw</label></div>
-									<input type="radio" id="trans_type_dw" name="trans_type" value="direct withdraw" required class="required">
+									<input type="radio" id="trans_type_dw" name="trans_type" value="direct withdraw" required="required" class="required">
 								</div>
 
 
 								<div id="sec-3-1-cc_payment_info" class="sec-3-1-formdiv">
 									<div id="sec-3-1-cc_number" class="sec-3-1-formdiv">
-										<div id="sec-3-1-cc_card_type" class="sec-3-1-formdiv">
+										<div class="label_container"><label for="cc_number">credit card number</label></div>
+										<input type="text" name="cc_number" id="cc_number" placeholder="" maxlength="19" />
+									</div>
+
+									<div id="sec-3-1-cc_expiry_date" class="sec-3-1-formdiv">
+										<div class="label_container"><label for="cc_expiry_date">expiration date</label></div>
+										<input type="text" name="cc_expiry_date" id="cc_expiry_date" placeholder="" maxlength="5" />
+									</div>
+
+									<div id="sec-3-1-cc_card_type" class="sec-3-1-formdiv">
 										<div class="label_container"><label for="cc_card_type">type of card</label></div>
 										<select name="cc_card_type" id="cc_card_type">
 											<option value="default">select</option>
@@ -371,69 +329,6 @@
 											<option value="Visa">Visa</option>
 										</select>
 									</div>
-										<div class="label_container"><label for="cc_number">credit card number</label></div>
-										<div>
-										<input type="text" size="24" maxlength="20" name="cc_number" onblur="
-  // save input string and strip out non-numbers
-  cc_number_saved = this.value;
-  this.value = this.value.replace(/[^\d]/g, '');
-  if(!checkLuhn(this.value)) {
-    alert('Sorry, that is not a valid number - please try again!');
-    this.value = '';
-  }
-" onfocus="
-  // restore saved string
-  if(this.value != cc_number_saved) this.value = cc_number_saved;
-">
-</div> 
-
-									<div id="sec-3-1-cc_expiry_date" class="sec-3-1-formdiv">
-										<div class="label_container"><label for="cc_expiry_date">expiration date</label></div>
-										<SELECT NAME="cboExpMonth" SIZE	="1">
-
-
-
-	<option VALUE="00" selected></option>
-            	<OPTION VALUE="01">01</OPTION>
-            	<OPTION VALUE="02">02</OPTION>
-           	 <OPTION VALUE="03">03</OPTION>
-            	<OPTION VALUE="04">04</OPTION>
-            	<OPTION VALUE="05">05</OPTION>
-            	<OPTION VALUE="06">06</OPTION>
-            	<OPTION VALUE="07">07</OPTION>
-            	<OPTION VALUE="08">08</OPTION>
-            	<OPTION VALUE="09">09</OPTION>
-            	<OPTION VALUE="10">10</OPTION>
-            	<OPTION VALUE="11">11</OPTION>
-            	<OPTION VALUE="12">12</OPTION>
-         </SELECT>
-		 
-
-Year:    <SELECT NAME="cboExpYear" SIZE="1">		
-
-             	<option VALUE="00" selected></option>
-				<OPTION VALUE="2004">01</OPTION><OPTION VALUE="2004">02</OPTION><OPTION VALUE="2004">03</OPTION>
-            		<OPTION VALUE="2004">04</OPTION>
-            		<OPTION VALUE="2005">05</OPTION>
-		<OPTION VALUE="2006">06</OPTION>
-		<OPTION VALUE="2007">07</OPTION>
-		<OPTION VALUE="2008">06</OPTION>
-		<OPTION VALUE="2009">09</OPTION>
-		<OPTION VALUE="2010">10</OPTION>
-		<OPTION VALUE="2011">11</OPTION>
-		<OPTION VALUE="2012">12</OPTION>
-        <OPTION VALUE="2013">13</OPTION>
-        <OPTION VALUE="2014">14</OPTION>
-        <OPTION VALUE="2015">15</OPTION>
-        <OPTION VALUE="2016">16</OPTION>
-        <OPTION VALUE="2017">17</OPTION><OPTION VALUE="2018">18</OPTION><OPTION VALUE="2019">19</OPTION>
-        <OPTION VALUE="2020">20</OPTION>
-         </SELECT>
-
-									</div>
-									
-
-									
 
 									<div id="sec-3-1-cc_csv" class="sec-3-1-formdiv">
 										<div class="label_container"><label for="cc_csv">CSV</label></div>
