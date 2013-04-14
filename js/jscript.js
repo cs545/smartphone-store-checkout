@@ -187,6 +187,20 @@ $(document).ready(function() {
 		}
 	}
 
+	function sectionGuideOn() {
+		if (current_section===1) {
+			$("#guide_section_1").toggleClass("active");
+		} else if (current_section===2) {
+			$("#guide_section_2").toggleClass("active");
+		} else if (current_section===3) {
+			$("#guide_section_3").toggleClass("active");
+		} else if (current_section===4) {
+			$("#guide_section_4").toggleClass("active");
+		} else if (current_section===5) {
+			$("#guide_section_5").toggleClass("active");
+		}
+	}
+
 	/* functions to run on load */
 	updatePricing();
 
@@ -196,6 +210,8 @@ $(document).ready(function() {
 		event.preventDefault();
 		if ( $(this).validate().form() ) {
 			current_section++;
+			$(".guide_section.active").next().attr('src',"./img/arrow_green.png").css({ opacity: 1.0 });
+			$(".guide_section.active").toggleClass("active");
 			$(this).parent().parent(".section").toggleClass("active", 4000);
 			$(this).parent().parent(".section").prev().children(".section_number").css({ opacity: 0.5 });
 			$(this).parent(".inner_section").siblings(".section_title").fadeOut(300);
@@ -209,6 +225,8 @@ $(document).ready(function() {
 					$(this).next().children(".inner_section").fadeIn(300);
 					$(this).next().children(".section_title").fadeIn(300);
 					$(this).children(".section_number").css({ opacity: 1.0 });
+					$(".guide_arrow").attr('src',"./img/arrow_grey.png").css({ opacity: 0.5 });
+					sectionGuideOn();
 				}).css('overflow', 'visible');
 			});
 			checkSteps();
@@ -220,6 +238,8 @@ $(document).ready(function() {
 	/* this function is for buttons that continue, but do not involve submitting a form */
 	$("button.next_step").click(function(){
 		current_section++;
+		$(".guide_section.active").next().attr('src',"./img/arrow_green.png").css({ opacity: 1.0 });
+		$(".guide_section.active").toggleClass("active");
 		$(this).parent().parent().parent(".section").toggleClass("active", 4000);
 		$(this).parent().parent().parent(".section").prev().children(".section_number").css({ opacity: 0.5 });
 		$(this).parent().parent(".inner_section").siblings(".section_title").fadeOut(300);
@@ -233,6 +253,8 @@ $(document).ready(function() {
 				$(this).next().children(".inner_section").fadeIn(300);
 				$(this).next().children(".section_title").fadeIn(300);
 				$(this).children(".section_number").css({ opacity: 1.0 });
+				$(".guide_arrow").attr('src',"./img/arrow_grey.png").css({ opacity: 0.5 });
+				sectionGuideOn();
 			}).css('overflow', 'visible');
 		});
 		checkSteps();
@@ -242,6 +264,7 @@ $(document).ready(function() {
 	/* this function provides backward movements */
 	$("button.back_step").click(function(){
 		current_section--;
+		$(".guide_section.active").toggleClass("active");
 		$(this).parent().parent().parent(".section").toggleClass("active", 4000);
 		$(this).parent().parent().parent(".section").prev().children(".section_number").css({ opacity: 0.5 });
 		$(this).parent().parent(".inner_section").siblings(".section_title").fadeOut(300);
@@ -254,6 +277,7 @@ $(document).ready(function() {
 				$(this).children(".inner_section").fadeIn(300);
 				$(this).children(".section_title").fadeIn(300);
 				$(this).prev().children(".section_number").css({ opacity: 1.0 });
+				sectionGuideOn();
 			}).css('overflow', 'visible');
 		});
 		checkSteps();
@@ -266,6 +290,7 @@ $(document).ready(function() {
 
 	$("button#edit_billing").click(function(){
 		current_section--;
+		$(".guide_section.active").toggleClass("active");
 		$(this).parent().parent(".section").toggleClass("active", 4000);
 		$(this).parent().parent(".section").prev().children(".section_number").css({ opacity: 0.5 });
 		$(this).parent(".inner_section").siblings(".section_title").fadeOut(300);
@@ -278,6 +303,7 @@ $(document).ready(function() {
 				$(this).children(".inner_section").fadeIn(300);
 				$(this).children(".section_title").fadeIn(300);
 				$(this).prev().children(".section_number").css({ opacity: 1.0 });
+				sectionGuideOn();
 			}).css('overflow', 'visible');
 		});
 		checkSteps();
@@ -286,6 +312,7 @@ $(document).ready(function() {
 
 	$("button#edit_shipping").click(function(){
 		current_section=current_section-2;
+		$(".guide_section.active").toggleClass("active");
 		$(this).parent().parent(".section").toggleClass("active", 4000);
 		$(this).parent().parent(".section").prev().children(".section_number").css({ opacity: 0.5 });
 		$(this).parent(".inner_section").siblings(".section_title").fadeOut(300);
@@ -303,6 +330,7 @@ $(document).ready(function() {
 				$(this).children(".inner_section").fadeIn(300);
 				$(this).children(".section_title").fadeIn(300);
 				$(this).prev().children(".section_number").css({ opacity: 1.0 });
+				sectionGuideOn();
 			}).css('overflow', 'visible');
 		});
 		checkSteps();

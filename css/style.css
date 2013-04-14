@@ -83,7 +83,7 @@ button.back_step:active {
 /********* HEADER *********/
 /**************************/
 header {
-	height: 145px;
+	height: 120px;
 	margin-top: 20px;
 }
 header img {
@@ -130,6 +130,67 @@ header #header_left {
 
 
 
+
+/**************************/
+/***** CHECKOUT GUIDE *****/
+/**************************/
+
+div#checkout_guide {
+	float: left;
+	width: 651px;
+	display: block;
+	position: relative;
+	margin: 10px 0;
+}
+
+#checkout_guide img {
+	position: relative;
+	float: left;
+	display: inline;
+	width: 39px;
+	margin: 3px 2px;
+	opacity: 0.5;
+}
+
+.guide_section {
+	float: left;
+	border: 1px solid #cccccc;
+	padding: 2px 5px;
+	margin: 0 2px;
+	background-color: #f1f1f1;
+	color: #b1b1b1;
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+	width: 80px;
+	text-align: center;
+	border-radius: 3px;
+}
+
+.guide_section.first {
+	margin-left: 2px;
+}
+
+.guide_section.last {
+	margin-right: 0;
+}
+
+.guide_section.active {
+	border: 1px solid #3d7627;
+	background-color: #69c146;
+	color: #463636;
+}
+
+/**************************/
+/*** END CHECKOUT GUIDE ***/
+/**************************/
+
+
+
+
+
+
+
+
 /**************************/
 /******** CHECKOUT ********/
 /**************************/
@@ -137,7 +198,6 @@ div#checkout_steps {
 	padding: 0;
 	margin: 10px 0;
 	float: left;
-	width: auto;
 	width: 651px;
 	position: relative;
 }
@@ -666,13 +726,13 @@ div#sec-5-cart_items, div#sec-5-1-bill_items {
 
 div#cart_contents {
 	float: right;
+	position: relative;
 	border: 1px solid #cccccc;
 	width: 270px;
 	height: auto;
 	margin: 10px 0;
 	background-color: white;
 	border-radius: 5px;
-
 }
 
 #cart_contents h3 {
